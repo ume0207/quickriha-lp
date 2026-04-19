@@ -3,24 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>肩の痛み専門整体院 Quickリハ整体 | 理学療法士が診る肩特化サロン</title>
+<title>四十肩・五十肩 専門整体 Quickリハ｜理学療法士による肩特化サロン</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --main: #0b3d6b;        /* ディープネイビー（医療×整体の信頼感） */
+  --main: #0b3d6b;
   --main-dark: #07263f;
-  --accent: #c9a24b;      /* 落ち着いた真鍮ゴールド */
+  --accent: #c9a24b;
   --accent-light: #e8c97c;
-  --sub: #e85a5a;         /* 肩の痛み=赤のアクセント */
+  --sub: #e85a5a;
   --text: #2a2a2a;
-  --bg-light: #f6f4ee;    /* 整体らしい温かいベージュグレー */
+  --bg-light: #f6f4ee;
   --bg-dark: #0d1b2a;
   --white: #ffffff;
 }
 
-/* Reset & Base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Noto Sans JP', sans-serif;
@@ -36,7 +35,6 @@ body {
 h1, h2, h3, h4, h5, h6, .serif { font-family: 'Noto Serif JP', serif; letter-spacing: .02em; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* Utility */
 .gold-text { color: var(--accent); }
 .main-text { color: var(--main); }
 .bg-dark { background: var(--bg-dark); color: var(--white); }
@@ -46,7 +44,6 @@ img { max-width: 100%; height: auto; display: block; }
 .mb-2 { margin-bottom: 1rem; }
 .mb-4 { margin-bottom: 2rem; }
 
-/* 1. 告知バー */
 .top-bar {
   position: sticky;
   top: 0;
@@ -61,7 +58,6 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: .03em;
 }
 
-/* 2. ヒーロー */
 .hero { position: relative; }
 .hero img { width: 100%; filter: brightness(0.78) saturate(1.05); }
 .hero-content {
@@ -133,7 +129,6 @@ img { max-width: 100%; height: auto; display: block; }
   clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
 }
 
-/* CTA */
 .cta-container { padding: 24px 18px; text-align: center; }
 .btn-main {
   display: block;
@@ -178,7 +173,6 @@ img { max-width: 100%; height: auto; display: block; }
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201,162,75,0); }
 }
 
-/* 3. 強みポイント */
 .features {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -268,16 +262,7 @@ img { max-width: 100%; height: auto; display: block; }
   margin-top: 8px;
   text-shadow: 0 1px 4px rgba(0,0,0,.6);
 }
-.features-lead {
-  text-align: center;
-  font-size: 11.5px;
-  letter-spacing: .3em;
-  color: var(--accent);
-  margin-bottom: 10px;
-  font-weight: 500;
-}
 
-/* 4. 共感 */
 .empathy-card {
   background: var(--white);
   border-radius: 15px;
@@ -315,7 +300,6 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: .4em;
   color: var(--accent-light);
   font-weight: 500;
-  writing-mode: horizontal-tb;
   border-left: 2px solid var(--accent);
   padding-left: 10px;
   align-self: flex-start;
@@ -323,7 +307,7 @@ img { max-width: 100%; height: auto; display: block; }
 .empathy-headline {
   font-family: 'Noto Serif JP', serif;
   font-weight: 700;
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1.35;
   letter-spacing: .02em;
   text-shadow: 0 2px 12px rgba(0,0,0,.6);
@@ -362,7 +346,6 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--sub); font-weight: bold; font-size: 20px;
 }
 
-/* セクションタイトル */
 .section-title {
   text-align: center;
   font-size: 24px;
@@ -381,7 +364,6 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 500;
 }
 
-/* 6. 原因 */
 .cause-section { background: var(--bg-dark); color: #eee; padding: 3rem 1.5rem; }
 .cause-title {
   color: var(--accent);
@@ -403,7 +385,6 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .cause-point strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 15px; }
 
-/* 7. 解決策 */
 .solution-section { padding: 0 0 3rem; background: var(--bg-light); }
 .solution-hero {
   position: relative;
@@ -467,7 +448,6 @@ img { max-width: 100%; height: auto; display: block; }
 .solution-card h4 { font-size: 16px; margin-bottom: 6px; color: var(--main); }
 .solution-card p { font-size: 14px; }
 
-/* 9. 選ばれる理由 */
 .reason-card {
   position: relative;
   margin-bottom: 26px;
@@ -476,7 +456,7 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 14px 30px rgba(7,38,63,0.18);
   background: #fff;
 }
-.reason-img-wrap { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: #07263f;}
+.reason-img-wrap { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #07263f;}
 .reason-img-wrap img {
   width: 100%; height: 100%; display: block;
   object-fit: cover; object-position: center;
@@ -501,7 +481,7 @@ img { max-width: 100%; height: auto; display: block; }
 .reason-overlay {
   position: absolute; inset: 0;
   display: flex; flex-direction: column; justify-content: space-between;
-  padding: 28px 24px 26px;
+  padding: 22px 22px 20px;
   color: #fff;
   z-index: 3;
 }
@@ -513,7 +493,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 500;
 }
 .reason-num {
-  font-size: 64px;
+  font-size: 56px;
   font-family: 'Noto Serif JP', serif;
   font-weight: 700;
   color: var(--accent-light);
@@ -532,7 +512,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .reason-title {
   font-family: 'Noto Serif JP', serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 1.45;
   letter-spacing: .01em;
@@ -555,7 +535,6 @@ img { max-width: 100%; height: auto; display: block; }
   width: 36px; height: 2px; background: var(--accent);
 }
 
-/* 11. プログラム内容 */
 .step-item { display: flex; margin-bottom: 22px; position: relative; }
 .step-num {
   width: 62px; height: 62px; background: var(--main); color: #fff;
@@ -572,7 +551,6 @@ img { max-width: 100%; height: auto; display: block; }
 .step-arrow { position: absolute; left: 30px; top: 62px; bottom: -22px; width: 2px; background: var(--main); z-index: 1; opacity: .4;}
 .step-item:last-child .step-arrow { display: none; }
 
-/* 14. お客様の声 */
 .review-card { background: var(--white); padding: 20px; border-radius: 10px; margin-bottom: 18px; border: 1px solid #ebe6d8; box-shadow: 0 4px 10px rgba(0,0,0,.04);}
 .review-header { display: flex; align-items: center; margin-bottom: 12px; }
 .review-avatar {
@@ -588,20 +566,6 @@ img { max-width: 100%; height: auto; display: block; }
 .review-headline { font-weight: bold; margin-bottom: 8px; font-size: 15px; color: var(--main-dark); }
 .review-card p { font-size: 14px; }
 
-/* 15. スタッフ/コンセプト */
-.staff-card { text-align: center; margin-bottom: 30px; }
-.staff-img {
-  width: 170px; height: 170px; border-radius: 50%;
-  object-fit: cover; object-position: right center;
-  margin: 0 auto 18px; border: 3px solid var(--accent);
-}
-.staff-card .qual {
-  display: inline-block; background: var(--main); color: #fff;
-  padding: 4px 14px; border-radius: 20px; font-size: 12px; margin-bottom: 8px;
-  letter-spacing: .05em;
-}
-
-/* 18. 料金 */
 .price-card {
   border: 2px solid #e5e0d3;
   border-radius: 10px;
@@ -625,7 +589,34 @@ img { max-width: 100%; height: auto; display: block; }
 .price-includes { text-align: left; background: #f9f5e8; padding: 12px 14px; border-radius: 6px; margin-top: 14px; font-size: 13px; line-height: 1.7; }
 .price-includes strong { color: var(--main); }
 
-/* 20. FAQ */
+/* QuickRiha 名前の補足 */
+.name-note {
+  background: #fff;
+  border: 1px dashed var(--accent);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #555;
+}
+.name-note strong { color: var(--main); display: block; margin-bottom: 4px; font-size: 14px; letter-spacing: .03em; }
+
+/* 期間限定バナー */
+.limited-banner {
+  background: linear-gradient(90deg, #c0392b, #e85a5a);
+  color: #fff;
+  text-align: center;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 13.5px;
+  font-weight: bold;
+  letter-spacing: .03em;
+  box-shadow: 0 4px 14px rgba(232,90,90,.35);
+}
+.limited-banner small { display: block; font-size: 11px; font-weight: normal; margin-top: 3px; opacity: .9;}
+
 .faq-item { border-bottom: 1px solid #ddd; background: #fff; }
 .faq-q { padding: 15px 18px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--white); font-size: 14.5px;}
 .faq-q.active { background: var(--bg-light); }
@@ -634,50 +625,64 @@ img { max-width: 100%; height: auto; display: block; }
 .faq-q::after { content: '+'; font-size: 22px; color: var(--main); margin-left: 10px;}
 .faq-q.active::after { content: '−'; }
 
-/* アクセス */
-.access-hero {
-  position: relative;
-  aspect-ratio: 16 / 11;
+/* どんな方におすすめ */
+.recommend-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.recommend-card {
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border: 1px solid #ebe6d8;
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: 4px;
-  margin-bottom: 0;
-  box-shadow: 0 14px 30px rgba(7,38,63,.2);
+  box-shadow: 0 6px 18px rgba(7,38,63,.08);
 }
-.access-hero img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center;
-  filter: brightness(0.42) saturate(0.95);
-}
-.access-hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(180deg, rgba(7,38,63,0.3) 0%, rgba(0,0,0,0.85) 100%);
-}
-.access-hero-inner {
-  position: absolute; inset: 0;
-  padding: 30px 26px;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  color: #fff;
-}
-.access-hero-inner .eyebrow {
-  font-size: 10.5px; letter-spacing: .45em; color: var(--accent-light);
-  margin-bottom: 12px;
-  display: inline-flex; align-items: center; gap: 10px;
-  align-self: flex-start;
-}
-.access-hero-inner .eyebrow::before {
-  content: ''; width: 26px; height: 1px; background: var(--accent);
-}
-.access-hero-inner h3 {
+.recommend-icon {
+  flex-shrink: 0;
+  width: 86px;
+  background: linear-gradient(160deg, var(--main), var(--main-dark));
+  color: var(--accent-light);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
   font-family: 'Noto Serif JP', serif;
-  font-size: 26px; line-height: 1.45; font-weight: 700;
-  text-shadow: 0 2px 10px rgba(0,0,0,.55);
+  padding: 8px;
 }
-.access-hero-inner h3 small {
+.recommend-icon .num {
+  font-size: 28px; font-weight: 700; line-height: 1;
+}
+.recommend-icon .label {
+  font-size: 9px; letter-spacing: .25em;
+  margin-top: 6px; opacity: .85;
+}
+.recommend-body { padding: 16px 18px; flex-grow: 1; }
+.recommend-body h4 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16.5px;
+  color: var(--main-dark);
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+.recommend-body h4 .hl {
+  background: linear-gradient(transparent 65%, rgba(232,90,90,.3) 65%);
+  padding: 0 2px;
+}
+.recommend-body p {
+  font-size: 13px; line-height: 1.75; color: #555;
+}
+
+/* アクセス */
+.access-map {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 14px 30px rgba(7,38,63,.2);
   display: block;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 12px; color: #ddd; font-weight: 400;
-  letter-spacing: .12em; margin-top: 6px;
+  margin-bottom: 0;
 }
 .access-info {
   background: #fff;
@@ -693,8 +698,12 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 11px; letter-spacing: .15em;
   padding-top: 4px;
 }
+.access-link {
+  display: inline-block; margin-top: 8px;
+  color: var(--main); font-weight: bold; font-size: 13px;
+  border-bottom: 1px solid var(--main); text-decoration: none;
+}
 
-/* 23. スティッキーCTA */
 .sticky-cta {
   position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
   width: 100%; max-width: 500px;
@@ -710,13 +719,11 @@ img { max-width: 100%; height: auto; display: block; }
 .sticky-main { background: linear-gradient(180deg, var(--accent-light), var(--accent)); color: #1a1200; }
 .sticky-line { background: #00B900; color: #fff; }
 
-/* アニメーション */
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
 body { padding-bottom: 90px; }
 
-/* 装飾: 理学療法士の専門性を示す信頼バー */
 .trust-bar {
   background: var(--main-dark);
   color: #fff;
@@ -728,7 +735,6 @@ body { padding-bottom: 90px; }
 .trust-bar .divider { color: var(--accent); margin: 0 10px; }
 .trust-bar strong { color: var(--accent-light); }
 
-/* 肩の痛み特化: 症状タグ */
 .symptom-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; justify-content: center; }
 .symptom-tag {
   background: #fff;
@@ -745,24 +751,24 @@ body { padding-bottom: 90px; }
 
 <!-- 1. 告知バー -->
 <div class="top-bar">
-  【肩の痛み専門・期間限定】初回体験 3,300円｜理学療法士が担当
+  【四十肩・五十肩 専門 / 期間限定】通常10,000円 → 体験 3,300円（50分）
 </div>
 
 <!-- 2. ヒーロー -->
 <div class="hero reveal active">
-  <img src="../QuickRiha_LP/images/treatment_session.jpg" alt="理学療法士による肩の施術">
+  <img src="images/shoulder/IMG_6948.jpg" alt="理学療法士による肩の可動域評価">
   <div class="hero-content">
-    <div class="hero-tag">肩特化</div>
+    <div class="hero-tag">四十肩・五十肩 特化</div>
     <div class="badge-stamp">国家資格<br>理学療法士<br>担当</div>
     <div class="gold-ribbon">病院で治らなかった肩の痛みに</div>
     <h1 class="hero-catch">
-      その<span class="accent-line">肩の痛み</span>、<br>諦めないでください。
+      その<span class="accent-line">四十肩・五十肩</span>、<br>諦めないでください。
     </h1>
-    <p class="hero-sub">肩の治療に特化した 理学療法士の整体院</p>
+    <p class="hero-sub">四十肩・五十肩 専門の<br>理学療法士による整体院</p>
     <div class="cta-container" style="width: 100%; padding: 0 10px;">
       <a href="#reserve" class="btn-main">
-        初回体験 3,300円で予約する
-        <small>▶ 肩の評価＋施術込み</small>
+        体験 3,300円（50分）で予約する
+        <small>▶ 通常 10,000円 → 期間限定価格</small>
       </a>
     </div>
   </div>
@@ -770,23 +776,35 @@ body { padding-bottom: 90px; }
 
 <!-- 信頼バー -->
 <div class="trust-bar">
-  国家資格 <strong>理学療法士</strong><span class="divider">|</span>肩特化 <strong>10年以上</strong><span class="divider">|</span>整形外科 <strong>出身</strong>
+  国家資格 <strong>理学療法士</strong><span class="divider">|</span>四十肩・五十肩 <strong>専門</strong><span class="divider">|</span>整形外科 <strong>出身</strong>
 </div>
 
-<!-- お客様の声（先頭配置 / Social Proof） -->
+<!-- お客様の声 -->
 <div class="p-4 reveal">
-  <h2 class="section-title"><small>VOICE</small>肩の痛みから卒業した方の声</h2>
+  <h2 class="section-title"><small>VOICE</small>四十肩・五十肩から卒業した方の声</h2>
 
   <div class="review-card">
     <div class="review-header">
       <div class="review-avatar">S</div>
       <div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">50代女性 / 五十肩でお悩み</div>
+        <div class="review-meta">50代女性 / 五十肩・夜間痛でお悩み</div>
       </div>
     </div>
-    <div class="review-headline">3ヶ月上がらなかった腕が、初回で動くように</div>
-    <p>整形外科で注射を打っても改善せず諦めていました。こちらで「肩の動きの原因」を初めて説明してもらい、その場で腕が上がって驚きました。</p>
+    <div class="review-headline">夜中の肩の痛みで眠れなかったのが、嘘のように楽に</div>
+    <p>整形外科で注射を打っても改善せず、夜中に痛みで何度も目が覚めていました。こちらで「肩の動きの原因」を初めて説明してもらい、3回目には夜ぐっすり眠れるように。本当に救われました。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">M</div>
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-meta">40代女性 / 四十肩・服が着られない</div>
+      </div>
+    </div>
+    <div class="review-headline">3ヶ月上がらなかった腕が、初回でここまで動くなんて</div>
+    <p>後ろのファスナーが上げられず、ブラジャーも留められない毎日。他の整体は「揉むだけ」でしたが、ここは原因から説明してくれて、初回でその場で腕が上がって涙が出ました。</p>
   </div>
 
   <div class="review-card">
@@ -794,23 +812,11 @@ body { padding-bottom: 90px; }
       <div class="review-avatar">K</div>
       <div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">40代男性 / デスクワーク慢性肩こり</div>
+        <div class="review-meta">60代女性 / 五十肩・他院で改善せず</div>
       </div>
     </div>
-    <div class="review-headline">マッサージでは取れなかった肩の重さが消えた</div>
-    <p>色んな整体を試してきましたが、ここだけ別物です。肩だけ揉むのではなく「胸椎が硬いから肩が張る」と教わり、納得して通えました。</p>
-  </div>
-
-  <div class="review-card">
-    <div class="review-header">
-      <div class="review-avatar">Y</div>
-      <div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-meta">30代男性 / 投球肩</div>
-      </div>
-    </div>
-    <div class="review-headline">投球フォームの不安がなくなりました</div>
-    <p>理学療法士さんが肩の仕組みから説明してくださり、痛みの原因が明確に。セルフケアまで教えてもらえて、再発が怖くなくなりました。</p>
+    <div class="review-headline">いくつ整骨院をまわっても良くならなかった肩が動くように</div>
+    <p>1年以上、複数の整骨院・整体・鍼に通っても変わらず半ば諦めていました。理学療法士さんが肩の仕組みから説明してくださり、原因が明確に。今は趣味のテニスにも復帰できました。</p>
   </div>
 
   <p class="text-center" style="font-size:12px; color:#888;">※個人の感想であり、効果には個人差があります</p>
@@ -818,10 +824,10 @@ body { padding-bottom: 90px; }
 
 <!-- 3. 強みポイント -->
 <div class="p-4 bg-light reveal">
-  <h2 class="section-title"><small>OUR STRENGTH</small>肩特化整体の4つの強み</h2>
+  <h2 class="section-title"><small>OUR STRENGTH</small>四十肩・五十肩 特化の4つの強み</h2>
   <div class="features">
     <div class="feature-badge">
-      <img src="images/treatment_01.jpg" alt="整形外科出身の理学療法士" style="object-position: center 40%;">
+      <img src="images/shoulder/IMG_6934.jpg" alt="整形外科出身の理学療法士" style="object-position: center 30%;">
       <div class="feature-inner">
         <div>
           <span class="feature-num-label">STRENGTH</span>
@@ -835,7 +841,7 @@ body { padding-bottom: 90px; }
       </div>
     </div>
     <div class="feature-badge">
-      <img src="images/treatment_02.jpg" alt="肩だけを診てきた院長">
+      <img src="images/shoulder/IMG_6922.jpg" alt="四十肩・五十肩だけを診てきた院長">
       <div class="feature-inner">
         <div>
           <span class="feature-num-label">STRENGTH</span>
@@ -843,27 +849,27 @@ body { padding-bottom: 90px; }
         </div>
         <div>
           <span class="feature-title-en">SHOULDER SPECIALIST</span>
-          <h4 class="feature-title"><span class="hl">肩だけ</span>を<br>診てきた院長</h4>
+          <h4 class="feature-title"><span class="hl">四十肩・五十肩</span>特化の<br>専門院</h4>
           <p class="feature-sub">肩関節の専門知識で根本にアプローチ。</p>
         </div>
       </div>
     </div>
     <div class="feature-badge">
-      <img src="images/treatment_08.jpg" alt="20分の短時間施術">
+      <img src="images/shoulder/IMG_7524.jpg" alt="50分の集中施術">
       <div class="feature-inner">
         <div>
           <span class="feature-num-label">STRENGTH</span>
           <span class="feature-num">03</span>
         </div>
         <div>
-          <span class="feature-title-en">SHORT &amp; EFFECTIVE</span>
-          <h4 class="feature-title"><span class="hl">20分</span>の<br>短時間施術</h4>
-          <p class="feature-sub">忙しい方でも通える無駄のない施術。</p>
+          <span class="feature-title-en">CONCENTRATED CARE</span>
+          <h4 class="feature-title"><span class="hl">50分</span>の<br>集中施術</h4>
+          <p class="feature-sub">評価・施術・セルフケアを丁寧に。</p>
         </div>
       </div>
     </div>
     <div class="feature-badge">
-      <img src="images/treatment_03.jpg" alt="原因を特定する医学的評価" style="object-position: center 55%;">
+      <img src="images/shoulder/IMG_6948.jpg" alt="原因を特定する医学的評価" style="object-position: center 30%;">
       <div class="feature-inner">
         <div>
           <span class="feature-num-label">STRENGTH</span>
@@ -883,28 +889,28 @@ body { padding-bottom: 90px; }
 <div class="p-4 reveal">
   <div class="empathy-card">
     <div class="empathy-hero">
-      <img src="images/empathy.jpg" alt="肩の悩みを抱える患者さま">
+      <img src="images/shoulder/IMG_6936.jpg" alt="肩の悩みを抱える患者さま">
       <div class="empathy-hero-inner">
         <span class="empathy-eyebrow">YOUR PAIN</span>
         <h3 class="empathy-headline">
           <span class="mark">“</span>その<span class="accent-ul">肩</span>、<br>ずっと我慢していませんか？<span class="mark">”</span>
-          <small>8つのサイン — 当てはまるものはありますか</small>
+          <small>当てはまるものはありますか</small>
         </h3>
       </div>
     </div>
     <ul class="empathy-list">
       <li>腕が肩より上がらず、服を着るのがつらい</li>
       <li>夜、肩が痛くて眠れない日がある</li>
-      <li>整形外科で「四十肩」と言われたまま放置されている</li>
+      <li>整形外科で「四十肩・五十肩」と言われたまま放置されている</li>
       <li>マッサージに通っても、その場しのぎで戻ってしまう</li>
-      <li>デスクワーク後、肩から首にかけてガチガチに固まる</li>
-      <li>スポーツで肩を痛めてから、投げる動作が怖い</li>
+      <li>後ろに手が回らず、髪を結ぶ・服を脱ぐのがつらい</li>
       <li>注射やリハビリを受けても改善を実感できない</li>
+      <li>もう何ヶ月も同じ痛みが続いている</li>
       <li>専門家にきちんと評価してもらったことがない</li>
     </ul>
     <div class="text-center p-4 bg-light">
       <h3 class="main-text" style="font-size:19px; margin-bottom: 4px;">そのお悩み、</h3>
-      <h3 class="gold-text" style="font-size: 22px;">肩特化の理学療法士にお任せください。</h3>
+      <h3 class="gold-text" style="font-size: 22px;">四十肩・五十肩 専門の<br>理学療法士にお任せください。</h3>
     </div>
   </div>
 </div>
@@ -912,14 +918,65 @@ body { padding-bottom: 90px; }
 <!-- 5. CTA 1 -->
 <div class="cta-container reveal">
   <h3 class="mb-2" style="font-size:17px;">まずは <span class="gold-text" style="font-size:22px;">3,300円</span> で体験。</h3>
-  <a href="#reserve" class="btn-main">初回体験を予約する<small>▶ LINEならさらに簡単</small></a>
+  <a href="#reserve" class="btn-main">体験 3,300円（50分）で予約<small>▶ 通常 10,000円 → 期間限定価格</small></a>
   <a href="#line" class="btn-sub">LINEで肩の状態を相談する</a>
+</div>
+
+<!-- どんな方におすすめ -->
+<div class="p-4 bg-light reveal">
+  <h2 class="section-title"><small>RECOMMENDED FOR</small>こんな方におすすめ</h2>
+
+  <div class="recommend-grid">
+    <div class="recommend-card">
+      <div class="recommend-icon">
+        <span class="num">01</span>
+        <span class="label">NIGHT PAIN</span>
+      </div>
+      <div class="recommend-body">
+        <h4><span class="hl">夜間痛</span>で眠れない方</h4>
+        <p>夜中に肩がズキズキ痛む、寝返りで目が覚める。寝不足が続いてつらい——そんな夜の痛みに、肩特化の評価で原因からアプローチします。</p>
+      </div>
+    </div>
+
+    <div class="recommend-card">
+      <div class="recommend-icon">
+        <span class="num">02</span>
+        <span class="label">DAILY PAIN</span>
+      </div>
+      <div class="recommend-body">
+        <h4>日常生活で<span class="hl">ずっと痛み</span>が続く方</h4>
+        <p>服を着る、髪を結ぶ、後ろに手を回す——毎日のちょっとした動作で痛みが出続け、「治る気配がない」と感じている方へ。</p>
+      </div>
+    </div>
+
+    <div class="recommend-card">
+      <div class="recommend-icon">
+        <span class="num">03</span>
+        <span class="label">NO RELIEF</span>
+      </div>
+      <div class="recommend-body">
+        <h4><span class="hl">他の病院・整体</span>で<br>治らなかった方</h4>
+        <p>整形外科の注射、整骨院、マッサージ、鍼——いろいろ試したけれど改善しない。そんな方こそ、医学的な評価が必要です。</p>
+      </div>
+    </div>
+
+    <div class="recommend-card">
+      <div class="recommend-icon">
+        <span class="num">04</span>
+        <span class="label">RANGE OF MOTION</span>
+      </div>
+      <div class="recommend-body">
+        <h4><span class="hl">可動域</span>が悪くなった方</h4>
+        <p>腕が上がらない、後ろに回らない、横に開かない。動かしづらくなった肩を、関節の動きから丁寧に評価して取り戻します。</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- 6. 原因 -->
 <div class="cause-section reveal">
   <h2 class="cause-title">なぜ、あなたの肩の痛みは<br>繰り返すのか？</h2>
-  <p>肩の痛みの多くは、<strong style="color:var(--accent-light);">痛みが出ている「場所」と、本当の「原因」が違う</strong>ことで起こっています。</p>
+  <p>四十肩・五十肩の多くは、<strong style="color:var(--accent-light);">痛みが出ている「場所」と、本当の「原因」が違う</strong>ことで起こっています。</p>
   <p>肩甲骨の動き、胸郭の硬さ、姿勢のクセ──これらを医学的に評価せずに「肩をほぐす」だけでは、痛みは必ず戻ります。</p>
   <div class="cause-point">
     <strong>▶ ポイント①</strong>
@@ -938,7 +995,7 @@ body { padding-bottom: 90px; }
 <!-- 7. 解決策 -->
 <div class="solution-section reveal">
   <div class="solution-hero">
-    <img src="images/treatment_closeup.jpg" alt="肩への徒手療法">
+    <img src="images/shoulder/IMG_6935.jpg" alt="肩への徒手療法">
     <div class="solution-hero-inner">
       <span class="solution-eyebrow">OUR APPROACH</span>
       <h2>
@@ -951,12 +1008,12 @@ body { padding-bottom: 90px; }
   </div>
   <div class="solution-inner">
   <div class="symptom-tags">
-    <span class="symptom-tag">四十肩・五十肩</span>
-    <span class="symptom-tag">腱板損傷</span>
-    <span class="symptom-tag">インピンジメント</span>
+    <span class="symptom-tag">四十肩</span>
+    <span class="symptom-tag">五十肩</span>
+    <span class="symptom-tag">夜間痛</span>
+    <span class="symptom-tag">可動域制限</span>
+    <span class="symptom-tag">拘縮肩</span>
     <span class="symptom-tag">慢性肩こり</span>
-    <span class="symptom-tag">投球障害肩</span>
-    <span class="symptom-tag">肩甲骨まわり</span>
   </div>
 
   <div class="solution-card">
@@ -976,16 +1033,16 @@ body { padding-bottom: 90px; }
 
 <!-- 8. CTA 2 -->
 <div class="cta-container reveal">
-  <a href="#reserve" class="btn-main">初回体験 3,300円で予約<small>▶ 肩の評価＋施術＋セルフケア付き</small></a>
+  <a href="#reserve" class="btn-main">体験 3,300円（50分）で予約<small>▶ 評価＋施術＋セルフケア込み</small></a>
 </div>
 
 <!-- 9. 選ばれる理由 -->
 <div class="p-4 bg-light reveal">
-  <h2 class="section-title"><small>WHY CHOOSEN</small>選ばれる5つの理由</h2>
+  <h2 class="section-title"><small>WHY CHOSEN</small>選ばれる5つの理由</h2>
 
   <div class="reason-card">
     <div class="reason-img-wrap">
-      <img src="images/treatment_05.jpg" alt="理由1 国家資格ホルダー">
+      <img src="images/shoulder/IMG_7521.jpg" alt="理由1 国家資格ホルダー" style="object-position: center 30%;">
       <div class="reason-overlay">
         <div class="reason-num-wrap">
           <span class="reason-num">01</span>
@@ -997,12 +1054,12 @@ body { padding-bottom: 90px; }
         </div>
       </div>
     </div>
-    <div class="reason-text">理学療法士の国家資格をもち、さらに「肩」を診続けてきたスタッフが担当。整体院でこの専門性はほぼありません。</div>
+    <div class="reason-text">理学療法士の国家資格をもち、四十肩・五十肩を診続けてきたスタッフが担当。整体院でこの専門性はほぼありません。</div>
   </div>
 
   <div class="reason-card">
     <div class="reason-img-wrap">
-      <img src="images/treatment_04.jpg" alt="理由2 医学的評価" style="object-position: 25% center;">
+      <img src="images/shoulder/IMG_6948.jpg" alt="理由2 医学的評価" style="object-position: center 30%;">
       <div class="reason-overlay">
         <div class="reason-num-wrap">
           <span class="reason-num">02</span>
@@ -1019,24 +1076,24 @@ body { padding-bottom: 90px; }
 
   <div class="reason-card">
     <div class="reason-img-wrap">
-      <img src="images/treatment_09.jpg" alt="理由3 施術">
+      <img src="images/shoulder/IMG_7525.jpg" alt="理由3 集中施術">
       <div class="reason-overlay">
         <div class="reason-num-wrap">
           <span class="reason-num">03</span>
           <span class="reason-num-label">REASON</span>
         </div>
         <div class="reason-title-block">
-          <span class="reason-title-en">EFFICIENT TREATMENT</span>
-          <h3 class="reason-title"><span class="hl">20分</span>でしっかり<br>変化を出す</h3>
+          <span class="reason-title-en">CONCENTRATED CARE</span>
+          <h3 class="reason-title"><span class="hl">50分</span>でしっかり<br>変化を出す</h3>
         </div>
       </div>
     </div>
-    <div class="reason-text">無駄な長時間施術はしません。的確な評価があるからこそ、短時間で肩の軽さを実感していただけます。</div>
+    <div class="reason-text">「Quickリハ」は"早く治る"の意味。決して短時間という意味ではありません。50分の中で、評価・施術・セルフケアまで丁寧に行います。</div>
   </div>
 
   <div class="reason-card">
     <div class="reason-img-wrap">
-      <img src="images/treatment_06.jpg" alt="理由4 再発予防">
+      <img src="images/shoulder/IMG_7164.jpg" alt="理由4 再発予防">
       <div class="reason-overlay">
         <div class="reason-num-wrap">
           <span class="reason-num">04</span>
@@ -1053,7 +1110,7 @@ body { padding-bottom: 90px; }
 
   <div class="reason-card">
     <div class="reason-img-wrap">
-      <img src="images/treatment_07.jpg" alt="理由5 完全予約制" style="object-position: center 65%;">
+      <img src="images/shoulder/IMG_7528.jpg" alt="理由5 完全予約制">
       <div class="reason-overlay">
         <div class="reason-num-wrap">
           <span class="reason-num">05</span>
@@ -1076,12 +1133,12 @@ body { padding-bottom: 90px; }
 
 <!-- 11. 施術の流れ -->
 <div class="p-4 bg-light reveal">
-  <h2 class="section-title"><small>FLOW</small>初回体験の流れ</h2>
+  <h2 class="section-title"><small>FLOW</small>初回体験の流れ（50分）</h2>
 
   <div class="step-item">
     <div class="step-num">STEP<span>01</span></div>
     <div class="step-content">
-      <h4 class="main-text">カウンセリング（5分）</h4>
+      <h4 class="main-text">カウンセリング（約10分）</h4>
       <p>肩の痛みの出方・いつから・どんな動作で痛むか、丁寧に伺います。</p>
     </div>
     <div class="step-arrow"></div>
@@ -1090,7 +1147,7 @@ body { padding-bottom: 90px; }
   <div class="step-item">
     <div class="step-num">STEP<span>02</span></div>
     <div class="step-content">
-      <h4 class="main-text">医学的な身体評価（5分）</h4>
+      <h4 class="main-text">医学的な身体評価（約10分）</h4>
       <p>関節可動域・筋力テスト・姿勢評価で「本当の原因」を特定します。</p>
     </div>
     <div class="step-arrow"></div>
@@ -1099,7 +1156,7 @@ body { padding-bottom: 90px; }
   <div class="step-item">
     <div class="step-num">STEP<span>03</span></div>
     <div class="step-content">
-      <h4 class="main-text">肩特化の徒手施術（20分）</h4>
+      <h4 class="main-text">肩特化の徒手施術（約25分）</h4>
       <p>肩甲骨・胸郭・インナーマッスルに的確にアプローチ。</p>
     </div>
     <div class="step-arrow"></div>
@@ -1108,7 +1165,7 @@ body { padding-bottom: 90px; }
   <div class="step-item">
     <div class="step-num">STEP<span>04</span></div>
     <div class="step-content">
-      <h4 class="main-text">セルフケア指導（5分）</h4>
+      <h4 class="main-text">セルフケア指導（約5分）</h4>
       <p>ご自宅で1〜2分でできる肩の再発予防エクササイズをお伝えします。</p>
     </div>
   </div>
@@ -1116,38 +1173,43 @@ body { padding-bottom: 90px; }
 
 <!-- 13. CTA 4 -->
 <div class="cta-container reveal">
-  <a href="#reserve" class="btn-main">体験 3,300円 を予約する<small>▶ 合計 約35分／完全予約制</small></a>
+  <a href="#reserve" class="btn-main">体験 3,300円（50分）を予約する<small>▶ 完全予約制</small></a>
 </div>
 
 <!-- 18. 料金プラン -->
 <div class="p-4 bg-light reveal" id="reserve">
   <h2 class="section-title"><small>PRICE</small>料金プラン</h2>
 
+  <div class="name-note">
+    <strong>「Quickリハ」という名前について</strong>
+    "Quick" は <strong style="color:var(--main);">「早く治る」</strong> という意味で名付けています。<br>
+    施術時間が短いわけではありません。<strong>1回50分</strong>の中で、評価から施術・セルフケアまで丁寧に行います。
+  </div>
+
+  <div class="limited-banner">
+    🎁 期間限定キャンペーン
+    <small>通常 10,000円 のところ → 体験 3,300円（税込）</small>
+  </div>
+
   <div class="price-card recommend">
     <div class="price-badge">初めての方 限定</div>
-    <h3>初回体験コース（約35分）</h3>
-    <span class="price-old">通常 6,600円</span>
+    <h3>初回体験コース（50分）</h3>
+    <span class="price-old">通常 10,000円</span>
     <p class="price-new">3,300<span class="yen">円（税込）</span></p>
-    <p class="price-note">カウンセリング＋評価＋施術＋セルフケア込み</p>
+    <p class="price-note">期間限定の体験価格です</p>
     <div class="price-includes">
       <strong>体験に含まれるもの</strong><br>
-      ✓ 肩のカウンセリング（5分）<br>
-      ✓ 医学的な身体評価（5分）<br>
-      ✓ 肩特化 徒手施術（20分）<br>
-      ✓ セルフケア指導（5分）
+      ✓ 肩のカウンセリング<br>
+      ✓ 医学的な身体評価<br>
+      ✓ 肩特化 徒手施術<br>
+      ✓ 再発予防セルフケア指導
     </div>
   </div>
 
   <div class="price-card">
-    <h3>通常 肩特化施術コース（30分）</h3>
-    <p class="price-new" style="color: var(--main);">6,600<span class="yen">円（税込）</span></p>
+    <h3>通常 肩特化施術コース（50分）</h3>
+    <p class="price-new" style="color: var(--main);">10,000<span class="yen">円（税込）</span></p>
     <p class="price-note">2回目以降はこちらが基本料金となります</p>
-  </div>
-
-  <div class="price-card">
-    <h3>集中ケア 5回チケット</h3>
-    <p class="price-new" style="color: var(--main);">30,000<span class="yen">円（税込）</span></p>
-    <p class="price-note">※1回あたり6,000円／四十肩・五十肩の方におすすめ</p>
   </div>
 </div>
 
@@ -1156,16 +1218,20 @@ body { padding-bottom: 90px; }
   <h2 class="section-title"><small>FAQ</small>よくあるご質問</h2>
 
   <div class="faq-item">
+    <div class="faq-q">「Quickリハ」は短時間施術ですか？</div>
+    <div class="faq-a">いいえ。「Quick」は"早く治る"という意味で、施術時間が短いわけではありません。1回50分の中で、評価・施術・セルフケアまで丁寧に行います。</div>
+  </div>
+  <div class="faq-item">
     <div class="faq-q">肩以外の部位は診てもらえませんか？</div>
-    <div class="faq-a">当院は「肩の治療」に特化しています。ただし肩と関係の深い首・肩甲骨・胸椎は施術範囲に含みますので、合わせてご相談ください。</div>
+    <div class="faq-a">当院は「四十肩・五十肩」に特化しています。ただし肩と関係の深い首・肩甲骨・胸椎は施術範囲に含みますので、合わせてご相談ください。</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">整形外科で「異常なし」と言われましたが大丈夫ですか？</div>
     <div class="faq-a">はい、そのような方こそ当院の得意領域です。画像に写らない筋・関節の動きの問題を、理学療法士の徒手評価で見つけていきます。</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q">四十肩・五十肩でも通えますか？</div>
-    <div class="faq-a">もちろん可能です。むしろ肩特化の整体院として最も多くご来院いただく症状です。病期（急性期・拘縮期・回復期）に合わせた施術を行います。</div>
+    <div class="faq-q">スポーツでの肩の痛み（投球肩など）も診てもらえますか？</div>
+    <div class="faq-a">申し訳ございません。当院は<strong>四十肩・五十肩 専門</strong>のため、野球肩・投球障害肩などのスポーツ性の肩は対象外とさせていただいております。</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">ポキポキ鳴らす施術はありますか？</div>
@@ -1177,7 +1243,7 @@ body { padding-bottom: 90px; }
   </div>
   <div class="faq-item">
     <div class="faq-q">何回くらいで改善しますか？</div>
-    <div class="faq-a">症状により異なりますが、慢性肩こりで3〜5回、四十肩で5〜10回を目安にご案内しています。初回体験で具体的な回数をお伝えします。</div>
+    <div class="faq-a">症状により異なりますが、四十肩・五十肩で5〜10回を目安にご案内しています。初回体験で具体的な回数をお伝えします。</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">予約は必要ですか？</div>
@@ -1188,32 +1254,28 @@ body { padding-bottom: 90px; }
 <!-- 17. アクセス -->
 <div class="p-4 bg-light reveal">
   <h2 class="section-title"><small>ACCESS</small>アクセス</h2>
-  <div class="access-hero">
-    <img src="images/clinic_atmosphere.jpg" alt="院内の様子">
-    <div class="access-hero-inner">
-      <span class="eyebrow">QUIET &amp; PRIVATE</span>
-      <h3>
-        静かな個室で、<br>あなたの肩と向き合う。
-        <small>完全予約制 / 同時間帯は1名様のみ</small>
-      </h3>
-    </div>
-  </div>
+  <iframe class="access-map"
+    src="https://www.google.com/maps?q=34.6927605,135.1896664&hl=ja&z=17&output=embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen></iframe>
   <div class="access-info">
-    <p><strong>院名</strong>Quickリハ整体 肩の痛み専門院</p>
+    <p><strong>院名</strong>Quickリハ 四十肩・五十肩 専門整体院（BodyNate内）</p>
     <p><strong>担当</strong>理学療法士（国家資格）</p>
     <p><strong>営業</strong>10:00〜20:00（完全予約制）</p>
     <p><strong>定休</strong>不定休</p>
+    <a class="access-link" href="https://maps.app.goo.gl/HrynV4HU1UxL64Q4A" target="_blank" rel="noopener">▶ Googleマップで開く</a>
     <p style="font-size:12px; color:#666; margin-top:12px; display:block;">※詳細な住所はご予約確定後にお伝えいたします。</p>
   </div>
 </div>
 
 <!-- 21. 最終CTA -->
 <div class="cta-container reveal bg-dark" style="padding: 44px 20px;">
-  <h2 class="gold-text mb-4" style="font-size: 24px; line-height:1.5;">その肩の痛み、<br>もう我慢しないでください。</h2>
+  <h2 class="gold-text mb-4" style="font-size: 24px; line-height:1.5;">その四十肩・五十肩、<br>もう我慢しないでください。</h2>
   <p style="color:#ccc; font-size:14px; margin-bottom: 26px;">肩特化の理学療法士が、あなたの肩と向き合います。</p>
   <a href="#reserve" class="btn-main" style="font-size: 20px;">
-    初回体験 3,300円 を予約する
-    <small>▶ 肩の評価 ＋ 施術 ＋ セルフケア</small>
+    体験 3,300円（50分）を予約する
+    <small>▶ 通常 10,000円 → 期間限定価格</small>
   </a>
   <a href="#line" class="btn-sub" style="margin-top:14px;">LINEで相談だけでもOK</a>
 </div>
@@ -1225,7 +1287,6 @@ body { padding-bottom: 90px; }
 </div>
 
 <script>
-// FAQ Accordion
 document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('click', () => {
     const a = q.nextElementSibling;
@@ -1234,7 +1295,6 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 
-// Scroll Reveal
 const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
