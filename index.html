@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>肩の痛み専門整体院 Quickリハ整体 | 理学療法士が診る肩特化サロン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --main: #0b3d6b;        /* ディープネイビー（医療×整体の信頼感） */
+  --main-dark: #07263f;
+  --accent: #c9a24b;      /* 落ち着いた真鍮ゴールド */
+  --accent-light: #e8c97c;
+  --sub: #e85a5a;         /* 肩の痛み=赤のアクセント */
+  --text: #2a2a2a;
+  --bg-light: #f6f4ee;    /* 整体らしい温かいベージュグレー */
+  --bg-dark: #0d1b2a;
+  --white: #ffffff;
+}
+
+/* Reset & Base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  background-color: #eee;
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  position: relative;
+  line-height: 1.7;
+}
+h1, h2, h3, h4, h5, h6, .serif { font-family: 'Noto Serif JP', serif; letter-spacing: .02em; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Utility */
+.gold-text { color: var(--accent); }
+.main-text { color: var(--main); }
+.bg-dark { background: var(--bg-dark); color: var(--white); }
+.bg-light { background: var(--bg-light); }
+.text-center { text-align: center; }
+.p-4 { padding: 2.4rem 1.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* 1. 告知バー */
+.top-bar {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(90deg, #c0392b, #e85a5a);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  letter-spacing: .03em;
+}
+
+/* 2. ヒーロー */
+.hero { position: relative; }
+.hero img { width: 100%; filter: brightness(0.78) saturate(1.05); }
+.hero-content {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(7,38,63,0.35) 0%, rgba(7,38,63,0.75) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+}
+.gold-ribbon {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #1a1200;
+  padding: 6px 22px;
+  transform: rotate(-4deg);
+  font-weight: bold;
+  margin-bottom: 18px;
+  font-size: 14px;
+  letter-spacing: .04em;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+.hero-catch {
+  font-size: 30px;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.3;
+}
+.hero-catch .accent-line {
+  background: linear-gradient(transparent 65%, rgba(232,90,90,.85) 65%);
+  padding: 0 4px;
+}
+.hero-sub {
+  font-size: 16px;
+  margin-bottom: 22px;
+  text-shadow: 1px 1px 4px #000;
+  text-align: center;
+}
+.badge-stamp {
+  position: absolute;
+  top: 18px; right: 18px;
+  width: 88px; height: 88px;
+  background: rgba(201, 162, 75, 0.95);
+  color: #1a1200;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 11px;
+  border: 2px dashed #fff;
+  line-height: 1.3;
+}
+.hero-tag {
+  position: absolute;
+  top: 18px; left: 0;
+  background: var(--sub);
+  color: #fff;
+  padding: 6px 16px 6px 14px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: .05em;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+}
+
+/* CTA */
+.cta-container { padding: 24px 18px; text-align: center; }
+.btn-main {
+  display: block;
+  background: linear-gradient(180deg, var(--accent-light), var(--accent));
+  color: #1a1200;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 19px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(201, 162, 75, 0.45);
+  animation: pulse 2s infinite;
+  margin-bottom: 12px;
+  letter-spacing: .02em;
+}
+.btn-main small { font-weight: normal; font-size: 13px; display: block; margin-top: 4px; }
+.btn-sub {
+  display: block;
+  background: #00B900;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.btn-outline {
+  display: block;
+  background: transparent;
+  color: var(--main);
+  border: 2px solid var(--main);
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201,162,75,0.7); }
+  70% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(201,162,75,0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201,162,75,0); }
+}
+
+/* 3. 強みポイント */
+.features { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.feature-badge {
+  width: calc(50% - 6px);
+  background: var(--white);
+  border: 1px solid #e5e0d3;
+  border-top: 3px solid var(--main);
+  border-radius: 8px;
+  padding: 16px 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,.04);
+}
+.feature-icon { font-size: 30px; color: var(--main); margin-bottom: 6px; }
+.feature-badge strong { display: block; font-size: 14px; }
+.feature-badge p { font-size: 11.5px; margin-top: 5px; color: #666; line-height: 1.5; }
+
+/* 4. 共感 */
+.empathy-card {
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.empathy-hero {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #000;
+}
+.empathy-hero img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  filter: grayscale(0.35) brightness(0.45) contrast(1.05);
+  transform: scale(1.02);
+}
+.empathy-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(201,162,75,0.18), transparent 55%),
+    linear-gradient(180deg, rgba(7,38,63,0.55) 0%, rgba(7,38,63,0.15) 40%, rgba(0,0,0,0.85) 100%);
+  z-index: 1;
+}
+.empathy-hero-inner {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 26px 22px;
+  z-index: 2;
+  color: #fff;
+}
+.empathy-eyebrow {
+  font-size: 11px;
+  letter-spacing: .4em;
+  color: var(--accent-light);
+  font-weight: 500;
+  writing-mode: horizontal-tb;
+  border-left: 2px solid var(--accent);
+  padding-left: 10px;
+  align-self: flex-start;
+}
+.empathy-headline {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.35;
+  letter-spacing: .02em;
+  text-shadow: 0 2px 12px rgba(0,0,0,.6);
+}
+.empathy-headline .mark {
+  color: var(--accent-light);
+  font-size: 44px;
+  font-family: 'Noto Serif JP', serif;
+  display: inline-block;
+  line-height: 1;
+  margin-right: 4px;
+  vertical-align: -4px;
+}
+.empathy-headline .accent-ul {
+  background: linear-gradient(transparent 68%, rgba(232,90,90,.75) 68%);
+  padding: 0 3px;
+}
+.empathy-headline small {
+  display: block;
+  font-size: 13px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  letter-spacing: .15em;
+  color: #ddd;
+  margin-top: 14px;
+}
+.empathy-list { list-style: none; padding: 22px 20px; }
+.empathy-list li {
+  padding: 11px 0 11px 32px;
+  border-bottom: 1px dashed #ccc;
+  position: relative;
+  font-size: 14.5px;
+}
+.empathy-list li::before {
+  content: '✓'; position: absolute; left: 0; top: 9px;
+  color: var(--sub); font-weight: bold; font-size: 20px;
+}
+
+/* セクションタイトル */
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 28px;
+  position: relative;
+  padding-bottom: 12px;
+  line-height: 1.4;
+}
+.section-title::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 50px; height: 3px; background: var(--accent);
+}
+.section-title small {
+  display: block; font-size: 12px; color: var(--accent);
+  letter-spacing: .2em; margin-bottom: 6px; font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+}
+
+/* 6. 原因 */
+.cause-section { background: var(--bg-dark); color: #eee; padding: 3rem 1.5rem; }
+.cause-title {
+  color: var(--accent);
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid rgba(201,162,75,.4);
+  padding-bottom: 14px;
+  line-height: 1.5;
+}
+.cause-section p { font-size: 14.5px; margin-bottom: 14px; }
+.cause-point {
+  background: rgba(255,255,255,.06);
+  border-left: 3px solid var(--accent);
+  padding: 14px 16px;
+  border-radius: 4px;
+  margin-top: 18px;
+  font-size: 14px;
+}
+.cause-point strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 15px; }
+
+/* 7. 解決策 */
+.solution-section { padding: 0 0 3rem; background: var(--bg-light); }
+.solution-hero {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 28px;
+}
+.solution-hero img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 35%;
+  filter: brightness(0.48) saturate(0.92);
+}
+.solution-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(110deg, rgba(7,38,63,0.75) 0%, rgba(7,38,63,0.2) 55%, transparent 100%),
+    linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.9) 100%);
+}
+.solution-hero-inner {
+  position: absolute; inset: 0;
+  padding: 34px 26px 30px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  color: #fff;
+}
+.solution-eyebrow {
+  font-size: 11px; letter-spacing: .45em; color: var(--accent-light);
+  font-weight: 500; display: inline-flex; align-items: center; gap: 10px;
+  align-self: flex-start;
+}
+.solution-eyebrow::before {
+  content: ''; width: 28px; height: 1px; background: var(--accent);
+}
+.solution-hero h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 30px; line-height: 1.4; font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0,0,0,.55);
+  margin-top: 12px;
+}
+.solution-hero h2 em {
+  font-style: normal; color: var(--accent-light);
+  font-size: 38px;
+}
+.solution-hero-lead {
+  font-size: 14px; line-height: 1.85;
+  text-shadow: 0 1px 6px rgba(0,0,0,.7);
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+  max-width: 92%;
+}
+.solution-inner { padding: 0 1.5rem; }
+.solution-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 18px 18px 18px 22px;
+  margin-top: 16px;
+  border-left: 4px solid var(--main);
+  box-shadow: 0 3px 8px rgba(0,0,0,.05);
+}
+.solution-card h4 { font-size: 16px; margin-bottom: 6px; color: var(--main); }
+.solution-card p { font-size: 14px; }
+
+/* 9. 選ばれる理由 */
+.reason-card {
+  position: relative;
+  margin-bottom: 26px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(7,38,63,0.18);
+  background: #fff;
+}
+.reason-img-wrap { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: #07263f;}
+.reason-img-wrap img {
+  width: 100%; height: 100%; display: block;
+  object-fit: cover; object-position: center;
+  filter: grayscale(0.15) brightness(0.55) contrast(1.05);
+  transition: transform .8s ease;
+}
+.reason-card:hover .reason-img-wrap img { transform: scale(1.04); }
+.reason-img-wrap::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7,38,63,0.25) 0%, rgba(7,38,63,0.1) 35%, rgba(0,0,0,0.9) 100%);
+  z-index: 1;
+}
+.reason-img-wrap::after {
+  content: '';
+  position: absolute; top: 14px; left: 14px; right: 14px; bottom: 14px;
+  border: 1px solid rgba(232,201,124,0.35);
+  pointer-events: none;
+  z-index: 2;
+}
+.reason-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 28px 24px 26px;
+  color: #fff;
+  z-index: 3;
+}
+.reason-num-wrap {
+  display: flex; align-items: baseline; gap: 10px;
+}
+.reason-num-label {
+  font-size: 10px; letter-spacing: .45em; color: var(--accent-light);
+  font-weight: 500;
+}
+.reason-num {
+  font-size: 64px;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  color: var(--accent-light);
+  line-height: 0.9;
+  letter-spacing: -.02em;
+  text-shadow: 0 3px 12px rgba(0,0,0,.5);
+}
+.reason-title-block { max-width: 100%; }
+.reason-title-en {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: .35em;
+  color: var(--accent-light);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.reason-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: .01em;
+  text-shadow: 0 2px 10px rgba(0,0,0,.55);
+}
+.reason-title .hl {
+  background: linear-gradient(transparent 70%, rgba(201,162,75,.55) 70%);
+  padding: 0 2px;
+}
+.reason-text {
+  padding: 22px 22px 24px;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.85;
+  position: relative;
+}
+.reason-text::before {
+  content: '';
+  position: absolute; top: -1px; left: 22px;
+  width: 36px; height: 2px; background: var(--accent);
+}
+
+/* 11. プログラム内容 */
+.step-item { display: flex; margin-bottom: 22px; position: relative; }
+.step-num {
+  width: 62px; height: 62px; background: var(--main); color: #fff;
+  border-radius: 50%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-weight: bold; font-size: 11px;
+  flex-shrink: 0; z-index: 2;
+  line-height: 1.1;
+}
+.step-num span { font-size: 20px; font-family: 'Noto Serif JP', serif; }
+.step-content { background: #fff; padding: 16px 18px; border-radius: 8px; margin-left: 15px; flex-grow: 1; box-shadow: 0 3px 6px rgba(0,0,0,.05); }
+.step-content h4 { font-size: 16px; margin-bottom: 5px; }
+.step-content p { font-size: 13.5px; }
+.step-arrow { position: absolute; left: 30px; top: 62px; bottom: -22px; width: 2px; background: var(--main); z-index: 1; opacity: .4;}
+.step-item:last-child .step-arrow { display: none; }
+
+/* 14. お客様の声 */
+.review-card { background: var(--white); padding: 20px; border-radius: 10px; margin-bottom: 18px; border: 1px solid #ebe6d8; box-shadow: 0 4px 10px rgba(0,0,0,.04);}
+.review-header { display: flex; align-items: center; margin-bottom: 12px; }
+.review-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  color: #fff; font-weight: bold; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  margin-right: 14px;
+  font-family: 'Noto Serif JP', serif;
+}
+.review-stars { color: var(--accent); font-size: 17px; margin-bottom: 3px;}
+.review-meta { font-size: 12px; color: #888; }
+.review-headline { font-weight: bold; margin-bottom: 8px; font-size: 15px; color: var(--main-dark); }
+.review-card p { font-size: 14px; }
+
+/* 15. スタッフ/コンセプト */
+.staff-card { text-align: center; margin-bottom: 30px; }
+.staff-img {
+  width: 170px; height: 170px; border-radius: 50%;
+  object-fit: cover; object-position: right center;
+  margin: 0 auto 18px; border: 3px solid var(--accent);
+}
+.staff-card .qual {
+  display: inline-block; background: var(--main); color: #fff;
+  padding: 4px 14px; border-radius: 20px; font-size: 12px; margin-bottom: 8px;
+  letter-spacing: .05em;
+}
+
+/* 18. 料金 */
+.price-card {
+  border: 2px solid #e5e0d3;
+  border-radius: 10px;
+  padding: 22px 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  background: #fff;
+}
+.price-card.recommend { border-color: var(--accent); position: relative; background: linear-gradient(180deg, #fffaeb 0%, #fff 100%); }
+.price-badge {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: #fff;
+  padding: 5px 22px; border-radius: 20px; font-weight: bold; font-size: 13px;
+  box-shadow: 0 3px 8px rgba(201,162,75,.4);
+}
+.price-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--main-dark); }
+.price-old { text-decoration: line-through; color: #888; font-size: 15px; display: block; margin-bottom: 4px;}
+.price-new { color: var(--sub); font-size: 34px; font-weight: bold; font-family: 'Noto Serif JP', serif; }
+.price-new .yen { font-size: 18px; }
+.price-note { font-size: 13px; margin-top: 10px; color: #555; }
+.price-includes { text-align: left; background: #f9f5e8; padding: 12px 14px; border-radius: 6px; margin-top: 14px; font-size: 13px; line-height: 1.7; }
+.price-includes strong { color: var(--main); }
+
+/* 20. FAQ */
+.faq-item { border-bottom: 1px solid #ddd; background: #fff; }
+.faq-q { padding: 15px 18px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--white); font-size: 14.5px;}
+.faq-q.active { background: var(--bg-light); }
+.faq-a { padding: 0 18px; max-height: 0; overflow: hidden; line-height: 1.7; font-size: 14px; transition: max-height .35s ease, padding .35s ease;}
+.faq-a.show { padding: 16px 18px; max-height: 600px;}
+.faq-q::after { content: '+'; font-size: 22px; color: var(--main); margin-left: 10px;}
+.faq-q.active::after { content: '−'; }
+
+/* アクセス */
+.access-hero {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 0;
+  box-shadow: 0 14px 30px rgba(7,38,63,.2);
+}
+.access-hero img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  filter: brightness(0.42) saturate(0.95);
+}
+.access-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7,38,63,0.3) 0%, rgba(0,0,0,0.85) 100%);
+}
+.access-hero-inner {
+  position: absolute; inset: 0;
+  padding: 30px 26px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  color: #fff;
+}
+.access-hero-inner .eyebrow {
+  font-size: 10.5px; letter-spacing: .45em; color: var(--accent-light);
+  margin-bottom: 12px;
+  display: inline-flex; align-items: center; gap: 10px;
+  align-self: flex-start;
+}
+.access-hero-inner .eyebrow::before {
+  content: ''; width: 26px; height: 1px; background: var(--accent);
+}
+.access-hero-inner h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 26px; line-height: 1.45; font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0,0,0,.55);
+}
+.access-hero-inner h3 small {
+  display: block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px; color: #ddd; font-weight: 400;
+  letter-spacing: .12em; margin-top: 6px;
+}
+.access-info {
+  background: #fff;
+  padding: 22px 20px;
+  border-radius: 0;
+  margin-top: 0;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+.access-info p { margin-bottom: 10px; font-size: 14px; display: flex; gap: 12px;}
+.access-info strong {
+  color: var(--main); min-width: 66px;
+  font-size: 11px; letter-spacing: .15em;
+  padding-top: 4px;
+}
+
+/* 23. スティッキーCTA */
+.sticky-cta {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 500px;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(6px);
+  padding: 10px;
+  display: flex; gap: 8px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.sticky-cta a { flex: 1; text-align: center; padding: 13px 5px; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 14px; line-height: 1.2;}
+.sticky-cta a small { display: block; font-size: 10px; font-weight: normal; margin-top: 2px; }
+.sticky-main { background: linear-gradient(180deg, var(--accent-light), var(--accent)); color: #1a1200; }
+.sticky-line { background: #00B900; color: #fff; }
+
+/* アニメーション */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+body { padding-bottom: 90px; }
+
+/* 装飾: 理学療法士の専門性を示す信頼バー */
+.trust-bar {
+  background: var(--main-dark);
+  color: #fff;
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: .05em;
+}
+.trust-bar .divider { color: var(--accent); margin: 0 10px; }
+.trust-bar strong { color: var(--accent-light); }
+
+/* 肩の痛み特化: 症状タグ */
+.symptom-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; justify-content: center; }
+.symptom-tag {
+  background: #fff;
+  border: 1px solid var(--main);
+  color: var(--main);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<!-- 1. 告知バー -->
+<div class="top-bar">
+  【肩の痛み専門・期間限定】初回体験 3,300円｜理学療法士が担当
+</div>
+
+<!-- 2. ヒーロー -->
+<div class="hero reveal active">
+  <img src="../QuickRiha_LP/images/treatment_session.jpg" alt="理学療法士による肩の施術">
+  <div class="hero-content">
+    <div class="hero-tag">肩特化</div>
+    <div class="badge-stamp">国家資格<br>理学療法士<br>担当</div>
+    <div class="gold-ribbon">病院で治らなかった肩の痛みに</div>
+    <h1 class="hero-catch">
+      その<span class="accent-line">肩の痛み</span>、<br>諦めないでください。
+    </h1>
+    <p class="hero-sub">肩の治療に特化した 理学療法士の整体院</p>
+    <div class="cta-container" style="width: 100%; padding: 0 10px;">
+      <a href="#reserve" class="btn-main">
+        初回体験 3,300円で予約する
+        <small>▶ 肩の評価＋施術込み</small>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- 信頼バー -->
+<div class="trust-bar">
+  国家資格 <strong>理学療法士</strong><span class="divider">|</span>肩特化 <strong>10年以上</strong><span class="divider">|</span>整形外科 <strong>出身</strong>
+</div>
+
+<!-- 3. 強みポイント -->
+<div class="p-4 bg-light reveal">
+  <h2 class="section-title"><small>OUR STRENGTH</small>肩特化整体の4つの強み</h2>
+  <div class="features">
+    <div class="feature-badge">
+      <div class="feature-icon">🏥</div>
+      <strong>整形外科出身の<br>理学療法士</strong>
+      <p>医療現場で培った評価技術を、整体に。</p>
+    </div>
+    <div class="feature-badge">
+      <div class="feature-icon">🎯</div>
+      <strong>肩だけを<br>診てきた院長</strong>
+      <p>肩関節の専門知識で根本にアプローチ。</p>
+    </div>
+    <div class="feature-badge">
+      <div class="feature-icon">⏱️</div>
+      <strong>20分の<br>短時間施術</strong>
+      <p>忙しい方でも通える無駄のない施術。</p>
+    </div>
+    <div class="feature-badge">
+      <div class="feature-icon">🔍</div>
+      <strong>原因を特定する<br>医学的評価</strong>
+      <p>「揉む」だけでは治らない理由がある。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 4. 共感 -->
+<div class="p-4 reveal">
+  <div class="empathy-card">
+    <div class="empathy-hero">
+      <img src="images/empathy.jpg" alt="肩の悩みを抱える患者さま">
+      <div class="empathy-hero-inner">
+        <span class="empathy-eyebrow">YOUR PAIN</span>
+        <h3 class="empathy-headline">
+          <span class="mark">“</span>その<span class="accent-ul">肩</span>、<br>ずっと我慢していませんか？<span class="mark">”</span>
+          <small>8つのサイン — 当てはまるものはありますか</small>
+        </h3>
+      </div>
+    </div>
+    <ul class="empathy-list">
+      <li>腕が肩より上がらず、服を着るのがつらい</li>
+      <li>夜、肩が痛くて眠れない日がある</li>
+      <li>整形外科で「四十肩」と言われたまま放置されている</li>
+      <li>マッサージに通っても、その場しのぎで戻ってしまう</li>
+      <li>デスクワーク後、肩から首にかけてガチガチに固まる</li>
+      <li>スポーツで肩を痛めてから、投げる動作が怖い</li>
+      <li>注射やリハビリを受けても改善を実感できない</li>
+      <li>専門家にきちんと評価してもらったことがない</li>
+    </ul>
+    <div class="text-center p-4 bg-light">
+      <h3 class="main-text" style="font-size:19px; margin-bottom: 4px;">そのお悩み、</h3>
+      <h3 class="gold-text" style="font-size: 22px;">肩特化の理学療法士にお任せください。</h3>
+    </div>
+  </div>
+</div>
+
+<!-- 5. CTA 1 -->
+<div class="cta-container reveal">
+  <h3 class="mb-2" style="font-size:17px;">まずは <span class="gold-text" style="font-size:22px;">3,300円</span> で体験。</h3>
+  <a href="#reserve" class="btn-main">初回体験を予約する<small>▶ LINEならさらに簡単</small></a>
+  <a href="#line" class="btn-sub">LINEで肩の状態を相談する</a>
+</div>
+
+<!-- 6. 原因 -->
+<div class="cause-section reveal">
+  <h2 class="cause-title">なぜ、あなたの肩の痛みは<br>繰り返すのか？</h2>
+  <p>肩の痛みの多くは、<strong style="color:var(--accent-light);">痛みが出ている「場所」と、本当の「原因」が違う</strong>ことで起こっています。</p>
+  <p>肩甲骨の動き、胸郭の硬さ、姿勢のクセ──これらを医学的に評価せずに「肩をほぐす」だけでは、痛みは必ず戻ります。</p>
+  <div class="cause-point">
+    <strong>▶ ポイント①</strong>
+    痛みの出ている筋肉は「結果」。本当の原因は別の場所にあります。
+  </div>
+  <div class="cause-point">
+    <strong>▶ ポイント②</strong>
+    整形外科で「異常なし」と言われた肩こそ、動きの評価が必要です。
+  </div>
+  <div class="cause-point">
+    <strong>▶ ポイント③</strong>
+    理学療法士による徒手評価で、肩甲上腕リズムの破綻を見抜きます。
+  </div>
+</div>
+
+<!-- 7. 解決策 -->
+<div class="solution-section reveal">
+  <div class="solution-hero">
+    <img src="images/treatment_closeup.jpg" alt="肩への徒手療法">
+    <div class="solution-hero-inner">
+      <span class="solution-eyebrow">OUR APPROACH</span>
+      <h2>
+        医療 <em>×</em> 整体の<br>「いいとこ取り」を、<br>あなたの肩へ。
+      </h2>
+      <p class="solution-hero-lead">
+        整形外科で数千人の肩を診てきた理学療法士が、<br>病院では時間をかけられない<strong style="color:var(--accent-light);">根本評価</strong>と<strong style="color:var(--accent-light);">丁寧な徒手療法</strong>を整体院として提供します。
+      </p>
+    </div>
+  </div>
+  <div class="solution-inner">
+  <div class="symptom-tags">
+    <span class="symptom-tag">四十肩・五十肩</span>
+    <span class="symptom-tag">腱板損傷</span>
+    <span class="symptom-tag">インピンジメント</span>
+    <span class="symptom-tag">慢性肩こり</span>
+    <span class="symptom-tag">投球障害肩</span>
+    <span class="symptom-tag">肩甲骨まわり</span>
+  </div>
+
+  <div class="solution-card">
+    <h4>① 医学的評価</h4>
+    <p>関節可動域・筋力・動作テストで、本当の原因を特定します。</p>
+  </div>
+  <div class="solution-card">
+    <h4>② ピンポイント徒手療法</h4>
+    <p>肩甲胸郭・胸椎・インナーマッスルに的確にアプローチ。</p>
+  </div>
+  <div class="solution-card">
+    <h4>③ 再発予防セルフケア</h4>
+    <p>自宅で続けられる1〜2分のエクササイズをお渡しします。</p>
+  </div>
+  </div>
+</div>
+
+<!-- 8. CTA 2 -->
+<div class="cta-container reveal">
+  <a href="#reserve" class="btn-main">初回体験 3,300円で予約<small>▶ 肩の評価＋施術＋セルフケア付き</small></a>
+</div>
+
+<!-- 9. 選ばれる理由 -->
+<div class="p-4 bg-light reveal">
+  <h2 class="section-title"><small>WHY CHOOSEN</small>選ばれる5つの理由</h2>
+
+  <div class="reason-card">
+    <div class="reason-img-wrap">
+      <img src="images/staff_portrait.jpg" alt="理由1 担当理学療法士">
+      <div class="reason-overlay">
+        <div class="reason-num-wrap">
+          <span class="reason-num">01</span>
+          <span class="reason-num-label">REASON</span>
+        </div>
+        <div class="reason-title-block">
+          <span class="reason-title-en">QUALIFIED SPECIALIST</span>
+          <h3 class="reason-title">国家資格 × <span class="hl">肩特化</span>の<br>希少な担当者</h3>
+        </div>
+      </div>
+    </div>
+    <div class="reason-text">理学療法士の国家資格をもち、さらに「肩」を診続けてきたスタッフが担当。整体院でこの専門性はほぼありません。</div>
+  </div>
+
+  <div class="reason-card">
+    <div class="reason-img-wrap">
+      <img src="images/evaluation.jpg" alt="理由2 評価">
+      <div class="reason-overlay">
+        <div class="reason-num-wrap">
+          <span class="reason-num">02</span>
+          <span class="reason-num-label">REASON</span>
+        </div>
+        <div class="reason-title-block">
+          <span class="reason-title-en">MEDICAL ASSESSMENT</span>
+          <h3 class="reason-title">まず<span class="hl">「評価」</span>から<br>始める整体</h3>
+        </div>
+      </div>
+    </div>
+    <div class="reason-text">いきなり揉みません。可動域・動作・姿勢を評価し、原因を共有してから施術へ。医療現場と同じ手順です。</div>
+  </div>
+
+  <div class="reason-card">
+    <div class="reason-img-wrap">
+      <img src="images/treatment_back.jpg" alt="理由3 施術">
+      <div class="reason-overlay">
+        <div class="reason-num-wrap">
+          <span class="reason-num">03</span>
+          <span class="reason-num-label">REASON</span>
+        </div>
+        <div class="reason-title-block">
+          <span class="reason-title-en">EFFICIENT TREATMENT</span>
+          <h3 class="reason-title"><span class="hl">20分</span>でしっかり<br>変化を出す</h3>
+        </div>
+      </div>
+    </div>
+    <div class="reason-text">無駄な長時間施術はしません。的確な評価があるからこそ、短時間で肩の軽さを実感していただけます。</div>
+  </div>
+
+  <div class="reason-card">
+    <div class="reason-img-wrap">
+      <img src="images/selfcare.jpg" alt="理由4 セルフケア">
+      <div class="reason-overlay">
+        <div class="reason-num-wrap">
+          <span class="reason-num">04</span>
+          <span class="reason-num-label">REASON</span>
+        </div>
+        <div class="reason-title-block">
+          <span class="reason-title-en">NO RECURRENCE</span>
+          <h3 class="reason-title"><span class="hl">再発させない</span><br>仕組みづくり</h3>
+        </div>
+      </div>
+    </div>
+    <div class="reason-text">施術だけで終わらせず、日常動作の修正とセルフケアまでセットでお渡し。"通い続ける整体"からの卒業を目指します。</div>
+  </div>
+
+  <div class="reason-card">
+    <div class="reason-img-wrap">
+      <img src="images/staff_portrait2.jpg" alt="理由5 担当スタッフ">
+      <div class="reason-overlay">
+        <div class="reason-num-wrap">
+          <span class="reason-num">05</span>
+          <span class="reason-num-label">REASON</span>
+        </div>
+        <div class="reason-title-block">
+          <span class="reason-title-en">BY APPOINTMENT ONLY</span>
+          <h3 class="reason-title">完全予約制 ×<br><span class="hl">専属担当</span>制</h3>
+        </div>
+      </div>
+    </div>
+    <div class="reason-text">お一人の肩にしっかり時間を使うため完全予約制。同じスタッフが継続して担当するから、毎回ゼロから説明し直す必要もありません。</div>
+  </div>
+</div>
+
+<!-- 10. CTA 3 -->
+<div class="cta-container reveal">
+  <a href="#reserve" class="btn-outline">空き状況を確認する</a>
+</div>
+
+<!-- 11. 施術の流れ -->
+<div class="p-4 bg-light reveal">
+  <h2 class="section-title"><small>FLOW</small>初回体験の流れ</h2>
+
+  <div class="step-item">
+    <div class="step-num">STEP<span>01</span></div>
+    <div class="step-content">
+      <h4 class="main-text">カウンセリング（5分）</h4>
+      <p>肩の痛みの出方・いつから・どんな動作で痛むか、丁寧に伺います。</p>
+    </div>
+    <div class="step-arrow"></div>
+  </div>
+
+  <div class="step-item">
+    <div class="step-num">STEP<span>02</span></div>
+    <div class="step-content">
+      <h4 class="main-text">医学的な身体評価（5分）</h4>
+      <p>関節可動域・筋力テスト・姿勢評価で「本当の原因」を特定します。</p>
+    </div>
+    <div class="step-arrow"></div>
+  </div>
+
+  <div class="step-item">
+    <div class="step-num">STEP<span>03</span></div>
+    <div class="step-content">
+      <h4 class="main-text">肩特化の徒手施術（20分）</h4>
+      <p>肩甲骨・胸郭・インナーマッスルに的確にアプローチ。</p>
+    </div>
+    <div class="step-arrow"></div>
+  </div>
+
+  <div class="step-item">
+    <div class="step-num">STEP<span>04</span></div>
+    <div class="step-content">
+      <h4 class="main-text">セルフケア指導（5分）</h4>
+      <p>ご自宅で1〜2分でできる肩の再発予防エクササイズをお伝えします。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 13. CTA 4 -->
+<div class="cta-container reveal">
+  <a href="#reserve" class="btn-main">体験 3,300円 を予約する<small>▶ 合計 約35分／完全予約制</small></a>
+</div>
+
+<!-- 14. お客様の声 -->
+<div class="p-4 reveal">
+  <h2 class="section-title"><small>VOICE</small>肩の痛みから卒業した方の声</h2>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">S</div>
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-meta">50代女性 / 五十肩でお悩み</div>
+      </div>
+    </div>
+    <div class="review-headline">3ヶ月上がらなかった腕が、初回で動くように</div>
+    <p>整形外科で注射を打っても改善せず諦めていました。こちらで「肩の動きの原因」を初めて説明してもらい、その場で腕が上がって驚きました。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">K</div>
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-meta">40代男性 / デスクワーク慢性肩こり</div>
+      </div>
+    </div>
+    <div class="review-headline">マッサージでは取れなかった肩の重さが消えた</div>
+    <p>色んな整体を試してきましたが、ここだけ別物です。肩だけ揉むのではなく「胸椎が硬いから肩が張る」と教わり、納得して通えました。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">Y</div>
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-meta">30代男性 / 投球肩</div>
+      </div>
+    </div>
+    <div class="review-headline">投球フォームの不安がなくなりました</div>
+    <p>理学療法士さんが肩の仕組みから説明してくださり、痛みの原因が明確に。セルフケアまで教えてもらえて、再発が怖くなくなりました。</p>
+  </div>
+
+  <p class="text-center" style="font-size:12px; color:#888;">※個人の感想であり、効果には個人差があります</p>
+</div>
+
+<!-- 18. 料金プラン -->
+<div class="p-4 bg-light reveal" id="reserve">
+  <h2 class="section-title"><small>PRICE</small>料金プラン</h2>
+
+  <div class="price-card recommend">
+    <div class="price-badge">初めての方 限定</div>
+    <h3>初回体験コース（約35分）</h3>
+    <span class="price-old">通常 6,600円</span>
+    <p class="price-new">3,300<span class="yen">円（税込）</span></p>
+    <p class="price-note">カウンセリング＋評価＋施術＋セルフケア込み</p>
+    <div class="price-includes">
+      <strong>体験に含まれるもの</strong><br>
+      ✓ 肩のカウンセリング（5分）<br>
+      ✓ 医学的な身体評価（5分）<br>
+      ✓ 肩特化 徒手施術（20分）<br>
+      ✓ セルフケア指導（5分）
+    </div>
+  </div>
+
+  <div class="price-card">
+    <h3>通常 肩特化施術コース（30分）</h3>
+    <p class="price-new" style="color: var(--main);">6,600<span class="yen">円（税込）</span></p>
+    <p class="price-note">2回目以降はこちらが基本料金となります</p>
+  </div>
+
+  <div class="price-card">
+    <h3>集中ケア 5回チケット</h3>
+    <p class="price-new" style="color: var(--main);">30,000<span class="yen">円（税込）</span></p>
+    <p class="price-note">※1回あたり6,000円／四十肩・五十肩の方におすすめ</p>
+  </div>
+</div>
+
+<!-- 20. FAQ -->
+<div class="p-4 reveal">
+  <h2 class="section-title"><small>FAQ</small>よくあるご質問</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">肩以外の部位は診てもらえませんか？</div>
+    <div class="faq-a">当院は「肩の治療」に特化しています。ただし肩と関係の深い首・肩甲骨・胸椎は施術範囲に含みますので、合わせてご相談ください。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">整形外科で「異常なし」と言われましたが大丈夫ですか？</div>
+    <div class="faq-a">はい、そのような方こそ当院の得意領域です。画像に写らない筋・関節の動きの問題を、理学療法士の徒手評価で見つけていきます。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">四十肩・五十肩でも通えますか？</div>
+    <div class="faq-a">もちろん可能です。むしろ肩特化の整体院として最も多くご来院いただく症状です。病期（急性期・拘縮期・回復期）に合わせた施術を行います。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">ポキポキ鳴らす施術はありますか？</div>
+    <div class="faq-a">ありません。理学療法士による安全な徒手療法のみです。痛みを伴う施術もいたしませんのでご安心ください。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">どのような服装で行けばいいですか？</div>
+    <div class="faq-a">肩を動かしやすい服装（Tシャツ等）でお越しください。お着替えスペースもご用意しております。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">何回くらいで改善しますか？</div>
+    <div class="faq-a">症状により異なりますが、慢性肩こりで3〜5回、四十肩で5〜10回を目安にご案内しています。初回体験で具体的な回数をお伝えします。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">予約は必要ですか？</div>
+    <div class="faq-a">完全予約制です。LINEまたはWEBから24時間ご予約いただけます。</div>
+  </div>
+</div>
+
+<!-- 17. アクセス -->
+<div class="p-4 bg-light reveal">
+  <h2 class="section-title"><small>ACCESS</small>アクセス</h2>
+  <div class="access-hero">
+    <img src="images/clinic_atmosphere.jpg" alt="院内の様子">
+    <div class="access-hero-inner">
+      <span class="eyebrow">QUIET &amp; PRIVATE</span>
+      <h3>
+        静かな個室で、<br>あなたの肩と向き合う。
+        <small>完全予約制 / 同時間帯は1名様のみ</small>
+      </h3>
+    </div>
+  </div>
+  <div class="access-info">
+    <p><strong>院名</strong>Quickリハ整体 肩の痛み専門院</p>
+    <p><strong>担当</strong>理学療法士（国家資格）</p>
+    <p><strong>営業</strong>10:00〜20:00（完全予約制）</p>
+    <p><strong>定休</strong>不定休</p>
+    <p style="font-size:12px; color:#666; margin-top:12px; display:block;">※詳細な住所はご予約確定後にお伝えいたします。</p>
+  </div>
+</div>
+
+<!-- 21. 最終CTA -->
+<div class="cta-container reveal bg-dark" style="padding: 44px 20px;">
+  <h2 class="gold-text mb-4" style="font-size: 24px; line-height:1.5;">その肩の痛み、<br>もう我慢しないでください。</h2>
+  <p style="color:#ccc; font-size:14px; margin-bottom: 26px;">肩特化の理学療法士が、あなたの肩と向き合います。</p>
+  <a href="#reserve" class="btn-main" style="font-size: 20px;">
+    初回体験 3,300円 を予約する
+    <small>▶ 肩の評価 ＋ 施術 ＋ セルフケア</small>
+  </a>
+  <a href="#line" class="btn-sub" style="margin-top:14px;">LINEで相談だけでもOK</a>
+</div>
+
+<!-- 23. スティッキーCTA -->
+<div class="sticky-cta">
+  <a href="#line" class="sticky-line">LINE予約<small>気軽に相談</small></a>
+  <a href="#reserve" class="sticky-main">WEB予約<small>体験 3,300円</small></a>
+</div>
+
+<script>
+// FAQ Accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const a = q.nextElementSibling;
+    q.classList.toggle('active');
+    a.classList.toggle('show');
+  });
+});
+
+// Scroll Reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.1 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
