@@ -179,20 +179,103 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* 3. 強みポイント */
-.features { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-.feature-badge {
-  width: calc(50% - 6px);
-  background: var(--white);
-  border: 1px solid #e5e0d3;
-  border-top: 3px solid var(--main);
-  border-radius: 8px;
-  padding: 16px 10px;
-  text-align: center;
-  box-shadow: 0 3px 8px rgba(0,0,0,.04);
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
-.feature-icon { font-size: 30px; color: var(--main); margin-bottom: 6px; }
-.feature-badge strong { display: block; font-size: 14px; }
-.feature-badge p { font-size: 11.5px; margin-top: 5px; color: #666; line-height: 1.5; }
+.feature-badge {
+  position: relative;
+  aspect-ratio: 1 / 1.18;
+  background: #07263f;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(7,38,63,.2);
+  padding: 0;
+}
+.feature-badge > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.42) grayscale(0.2) contrast(1.05);
+  transition: transform .8s ease;
+}
+.feature-badge:hover > img { transform: scale(1.05); }
+.feature-badge::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7,38,63,0.25) 0%, rgba(7,38,63,0.1) 35%, rgba(0,0,0,0.9) 100%);
+  z-index: 1;
+}
+.feature-badge::after {
+  content: '';
+  position: absolute; top: 9px; left: 9px; right: 9px; bottom: 9px;
+  border: 1px solid rgba(232,201,124,0.32);
+  pointer-events: none;
+  z-index: 2;
+}
+.feature-inner {
+  position: absolute; inset: 0;
+  padding: 20px 18px 22px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  color: #fff;
+  z-index: 3;
+  text-align: left;
+}
+.feature-num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--accent-light);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 3px 10px rgba(0,0,0,.5);
+}
+.feature-num-label {
+  display: block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9px;
+  color: var(--accent-light);
+  letter-spacing: .38em;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.feature-title-en {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .28em;
+  color: var(--accent-light);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.feature-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .01em;
+  text-shadow: 0 2px 8px rgba(0,0,0,.55);
+}
+.feature-title .hl {
+  background: linear-gradient(transparent 70%, rgba(201,162,75,.5) 70%);
+  padding: 0 2px;
+}
+.feature-sub {
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: #d5d0c4;
+  margin-top: 8px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.6);
+}
+.features-lead {
+  text-align: center;
+  font-size: 11.5px;
+  letter-spacing: .3em;
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
 
 /* 4. 共感 */
 .empathy-card {
@@ -690,29 +773,108 @@ body { padding-bottom: 90px; }
   国家資格 <strong>理学療法士</strong><span class="divider">|</span>肩特化 <strong>10年以上</strong><span class="divider">|</span>整形外科 <strong>出身</strong>
 </div>
 
+<!-- お客様の声（先頭配置 / Social Proof） -->
+<div class="p-4 reveal">
+  <h2 class="section-title"><small>VOICE</small>肩の痛みから卒業した方の声</h2>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">S</div>
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-meta">50代女性 / 五十肩でお悩み</div>
+      </div>
+    </div>
+    <div class="review-headline">3ヶ月上がらなかった腕が、初回で動くように</div>
+    <p>整形外科で注射を打っても改善せず諦めていました。こちらで「肩の動きの原因」を初めて説明してもらい、その場で腕が上がって驚きました。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">K</div>
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-meta">40代男性 / デスクワーク慢性肩こり</div>
+      </div>
+    </div>
+    <div class="review-headline">マッサージでは取れなかった肩の重さが消えた</div>
+    <p>色んな整体を試してきましたが、ここだけ別物です。肩だけ揉むのではなく「胸椎が硬いから肩が張る」と教わり、納得して通えました。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-avatar">Y</div>
+      <div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-meta">30代男性 / 投球肩</div>
+      </div>
+    </div>
+    <div class="review-headline">投球フォームの不安がなくなりました</div>
+    <p>理学療法士さんが肩の仕組みから説明してくださり、痛みの原因が明確に。セルフケアまで教えてもらえて、再発が怖くなくなりました。</p>
+  </div>
+
+  <p class="text-center" style="font-size:12px; color:#888;">※個人の感想であり、効果には個人差があります</p>
+</div>
+
 <!-- 3. 強みポイント -->
 <div class="p-4 bg-light reveal">
   <h2 class="section-title"><small>OUR STRENGTH</small>肩特化整体の4つの強み</h2>
   <div class="features">
     <div class="feature-badge">
-      <div class="feature-icon">🏥</div>
-      <strong>整形外科出身の<br>理学療法士</strong>
-      <p>医療現場で培った評価技術を、整体に。</p>
+      <img src="images/staff_portrait.jpg" alt="整形外科出身の理学療法士">
+      <div class="feature-inner">
+        <div>
+          <span class="feature-num-label">STRENGTH</span>
+          <span class="feature-num">01</span>
+        </div>
+        <div>
+          <span class="feature-title-en">MEDICAL BACKGROUND</span>
+          <h4 class="feature-title"><span class="hl">整形外科</span>出身の<br>理学療法士</h4>
+          <p class="feature-sub">医療現場で培った評価技術を、整体に。</p>
+        </div>
+      </div>
     </div>
     <div class="feature-badge">
-      <div class="feature-icon">🎯</div>
-      <strong>肩だけを<br>診てきた院長</strong>
-      <p>肩関節の専門知識で根本にアプローチ。</p>
+      <img src="images/staff_portrait2.jpg" alt="肩だけを診てきた院長">
+      <div class="feature-inner">
+        <div>
+          <span class="feature-num-label">STRENGTH</span>
+          <span class="feature-num">02</span>
+        </div>
+        <div>
+          <span class="feature-title-en">SHOULDER SPECIALIST</span>
+          <h4 class="feature-title"><span class="hl">肩だけ</span>を<br>診てきた院長</h4>
+          <p class="feature-sub">肩関節の専門知識で根本にアプローチ。</p>
+        </div>
+      </div>
     </div>
     <div class="feature-badge">
-      <div class="feature-icon">⏱️</div>
-      <strong>20分の<br>短時間施術</strong>
-      <p>忙しい方でも通える無駄のない施術。</p>
+      <img src="images/treatment_closeup.jpg" alt="20分の短時間施術">
+      <div class="feature-inner">
+        <div>
+          <span class="feature-num-label">STRENGTH</span>
+          <span class="feature-num">03</span>
+        </div>
+        <div>
+          <span class="feature-title-en">SHORT &amp; EFFECTIVE</span>
+          <h4 class="feature-title"><span class="hl">20分</span>の<br>短時間施術</h4>
+          <p class="feature-sub">忙しい方でも通える無駄のない施術。</p>
+        </div>
+      </div>
     </div>
     <div class="feature-badge">
-      <div class="feature-icon">🔍</div>
-      <strong>原因を特定する<br>医学的評価</strong>
-      <p>「揉む」だけでは治らない理由がある。</p>
+      <img src="images/evaluation.jpg" alt="原因を特定する医学的評価">
+      <div class="feature-inner">
+        <div>
+          <span class="feature-num-label">STRENGTH</span>
+          <span class="feature-num">04</span>
+        </div>
+        <div>
+          <span class="feature-title-en">ROOT CAUSE ANALYSIS</span>
+          <h4 class="feature-title">原因を特定する<br><span class="hl">医学的評価</span></h4>
+          <p class="feature-sub">「揉む」だけでは治らない理由がある。</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -955,49 +1117,6 @@ body { padding-bottom: 90px; }
 <!-- 13. CTA 4 -->
 <div class="cta-container reveal">
   <a href="#reserve" class="btn-main">体験 3,300円 を予約する<small>▶ 合計 約35分／完全予約制</small></a>
-</div>
-
-<!-- 14. お客様の声 -->
-<div class="p-4 reveal">
-  <h2 class="section-title"><small>VOICE</small>肩の痛みから卒業した方の声</h2>
-
-  <div class="review-card">
-    <div class="review-header">
-      <div class="review-avatar">S</div>
-      <div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-meta">50代女性 / 五十肩でお悩み</div>
-      </div>
-    </div>
-    <div class="review-headline">3ヶ月上がらなかった腕が、初回で動くように</div>
-    <p>整形外科で注射を打っても改善せず諦めていました。こちらで「肩の動きの原因」を初めて説明してもらい、その場で腕が上がって驚きました。</p>
-  </div>
-
-  <div class="review-card">
-    <div class="review-header">
-      <div class="review-avatar">K</div>
-      <div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-meta">40代男性 / デスクワーク慢性肩こり</div>
-      </div>
-    </div>
-    <div class="review-headline">マッサージでは取れなかった肩の重さが消えた</div>
-    <p>色んな整体を試してきましたが、ここだけ別物です。肩だけ揉むのではなく「胸椎が硬いから肩が張る」と教わり、納得して通えました。</p>
-  </div>
-
-  <div class="review-card">
-    <div class="review-header">
-      <div class="review-avatar">Y</div>
-      <div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-meta">30代男性 / 投球肩</div>
-      </div>
-    </div>
-    <div class="review-headline">投球フォームの不安がなくなりました</div>
-    <p>理学療法士さんが肩の仕組みから説明してくださり、痛みの原因が明確に。セルフケアまで教えてもらえて、再発が怖くなくなりました。</p>
-  </div>
-
-  <p class="text-center" style="font-size:12px; color:#888;">※個人の感想であり、効果には個人差があります</p>
 </div>
 
 <!-- 18. 料金プラン -->
