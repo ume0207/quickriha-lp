@@ -3,7 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>四十肩・五十肩 専門整体 Quickリハ｜理学療法士による肩特化サロン</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1483058883852619');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1483058883852619&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- ========= Microsoft Clarity (project: QuickRiha 整体LP / id: ws2icxz768) ========= -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ws2icxz768");
+</script>
+<!-- ========= End Clarity ========= -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -32,7 +60,13 @@ body {
   position: relative;
   line-height: 1.7;
 }
-h1, h2, h3, h4, h5, h6, .serif { font-family: 'Noto Serif JP', serif; letter-spacing: .02em; }
+h1, h2, h3, h4, h5, h6, .serif {
+  font-family: 'Noto Serif JP', serif;
+  letter-spacing: .02em;
+  line-break: strict;
+  word-break: auto-phrase;
+}
+p, li { text-wrap: pretty; word-break: auto-phrase; }
 img { max-width: 100%; height: auto; display: block; }
 
 .gold-text { color: var(--accent); }
@@ -50,61 +84,173 @@ img { max-width: 100%; height: auto; display: block; }
   background: linear-gradient(90deg, #c0392b, #e85a5a);
   color: #fff;
   text-align: center;
-  padding: 10px;
-  font-size: 13px;
+  padding: 7px 10px 8px;
   font-weight: bold;
   z-index: 100;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  letter-spacing: .03em;
+  letter-spacing: .02em;
+  line-height: 1.45;
 }
+.top-bar-store {
+  font-size: clamp(10px, 2.85vw, 12px);
+  font-weight: 500;
+  opacity: .95;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,.22);
+  letter-spacing: .02em;
+}
+.top-bar-store strong { color: #fff8c9; font-weight: 700; }
+.top-bar-store .sep { opacity: .6; margin: 0 4px; }
+.top-bar-campaign {
+  font-size: clamp(11.5px, 3.2vw, 13px);
+}
+.top-bar-campaign strong { color: #fff8c9; }
+.top-bar .nowrap { white-space: nowrap; }
 
-.hero { position: relative; }
-.hero img { width: 100%; filter: brightness(0.78) saturate(1.05); }
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #07263f;
+}
+.hero > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 25%;
+  filter: brightness(0.72) saturate(1.05);
+  z-index: 0;
+}
 .hero-content {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(180deg, rgba(7,38,63,0.35) 0%, rgba(7,38,63,0.75) 100%);
+  position: relative;
+  z-index: 1;
+  min-height: 600px;
+  background: linear-gradient(180deg, rgba(7,38,63,0.30) 0%, rgba(7,38,63,0.55) 45%, rgba(7,38,63,0.85) 100%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: #fff;
-  padding: 20px;
+  padding: 46px 16px 0;
+}
+.hero-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: auto -16px 28px;
+  width: calc(100% + 32px);
+  padding: 14px 6px 16px;
+  justify-items: center;
+  align-items: end;
+  background: linear-gradient(180deg, transparent, rgba(7,38,63,0.92));
+  box-sizing: border-box;
+}
+.hero-point {
+  position: relative;
+  width: 100%;
+  max-width: 118px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: .02em;
+  color: #fff;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.18), transparent 55%),
+    linear-gradient(160deg, rgba(7,38,63,.92), rgba(13,27,42,.95));
+  box-shadow:
+    0 0 0 1px rgba(232,201,124,.5),
+    0 0 0 4px rgba(7,38,63,.6),
+    0 0 0 5px rgba(201,162,75,.85),
+    0 10px 24px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.12);
+}
+.hero-point::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px dashed rgba(232,201,124,.55);
+  pointer-events: none;
+}
+.hero-point::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 6px; height: 6px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px var(--accent-light);
+}
+.hero-point strong {
+  color: var(--accent-light);
+  font-size: 12.5px;
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  margin-bottom: 3px;
+  line-height: 1.2;
+  text-shadow: 0 1px 4px rgba(0,0,0,.6);
+}
+.hero-point .pt-en {
+  display: block;
+  font-size: 7px;
+  letter-spacing: .2em;
+  color: rgba(232,201,124,.85);
+  font-weight: 500;
+  margin-top: 3px;
 }
 .gold-ribbon {
+  align-self: flex-start;
+  margin-left: -4px;
   background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: #1a1200;
-  padding: 6px 22px;
+  padding: 5px 18px;
   transform: rotate(-4deg);
+  transform-origin: left center;
   font-weight: bold;
-  margin-bottom: 18px;
-  font-size: 14px;
-  letter-spacing: .04em;
+  margin-bottom: 14px;
+  font-size: clamp(12px, 3.4vw, 14px);
+  letter-spacing: .02em;
   box-shadow: 0 3px 8px rgba(0,0,0,.3);
+  max-width: 100%;
+  text-align: center;
 }
 .hero-catch {
-  font-size: 30px;
+  font-size: clamp(22px, 6.6vw, 30px);
   font-family: 'Noto Serif JP', serif;
   font-weight: 700;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
   margin-bottom: 10px;
   text-align: center;
   line-height: 1.3;
+  letter-spacing: 0;
+  max-width: 100%;
+  word-break: keep-all;
 }
 .hero-catch .accent-line {
   background: linear-gradient(transparent 65%, rgba(232,90,90,.85) 65%);
-  padding: 0 4px;
+  padding: 0 3px;
 }
 .hero-sub {
-  font-size: 16px;
-  margin-bottom: 22px;
+  font-size: clamp(13px, 3.6vw, 16px);
+  margin-bottom: 18px;
   text-shadow: 1px 1px 4px #000;
   text-align: center;
+  line-height: 1.55;
 }
 .badge-stamp {
   position: absolute;
-  top: 18px; right: 18px;
-  width: 88px; height: 88px;
+  top: 14px; right: 12px;
+  width: 74px; height: 74px;
   background: rgba(201, 162, 75, 0.95);
   color: #1a1200;
   border-radius: 50%;
@@ -113,20 +259,22 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   text-align: center;
   font-weight: bold;
-  font-size: 11px;
+  font-size: 10px;
   border: 2px dashed #fff;
   line-height: 1.3;
+  z-index: 2;
 }
 .hero-tag {
   position: absolute;
-  top: 18px; left: 0;
+  top: 14px; left: 0;
   background: var(--sub);
   color: #fff;
-  padding: 6px 16px 6px 14px;
-  font-size: 12px;
+  padding: 5px 14px 5px 12px;
+  font-size: 11px;
   font-weight: bold;
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+  z-index: 2;
 }
 
 .cta-container { padding: 24px 18px; text-align: center; }
@@ -134,15 +282,15 @@ img { max-width: 100%; height: auto; display: block; }
   display: block;
   background: linear-gradient(180deg, var(--accent-light), var(--accent));
   color: #1a1200;
-  padding: 16px;
+  padding: 15px 10px;
   border-radius: 10px;
-  font-size: 19px;
+  font-size: clamp(15px, 4.6vw, 19px);
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 5px 15px rgba(201, 162, 75, 0.45);
   animation: pulse 2s infinite;
   margin-bottom: 12px;
-  letter-spacing: .02em;
+  letter-spacing: .01em;
 }
 .btn-main small { font-weight: normal; font-size: 13px; display: block; margin-top: 4px; }
 .btn-sub {
@@ -168,9 +316,15 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
 }
 @keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201,162,75,0.7); }
-  70% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(201,162,75,0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201,162,75,0); }
+  0% { box-shadow: 0 5px 15px rgba(201,162,75,0.45), 0 0 0 0 rgba(201,162,75,0.55); }
+  70% { box-shadow: 0 5px 15px rgba(201,162,75,0.45), 0 0 0 12px rgba(201,162,75,0); }
+  100% { box-shadow: 0 5px 15px rgba(201,162,75,0.45), 0 0 0 0 rgba(201,162,75,0); }
+}
+a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(201,162,75,.25);
+  cursor: pointer;
+  user-select: none;
 }
 
 .features {
@@ -180,7 +334,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .feature-badge {
   position: relative;
-  aspect-ratio: 1 / 1.18;
+  aspect-ratio: 1 / 1.4;
   background: #07263f;
   border-radius: 2px;
   overflow: hidden;
@@ -211,11 +365,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .feature-inner {
   position: absolute; inset: 0;
-  padding: 20px 18px 22px;
+  padding: 16px 14px 18px;
   display: flex; flex-direction: column; justify-content: space-between;
   color: #fff;
   z-index: 3;
   text-align: left;
+  overflow: hidden;
 }
 .feature-num {
   font-family: 'Noto Serif JP', serif;
@@ -245,22 +400,24 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .feature-title {
   font-family: 'Noto Serif JP', serif;
-  font-size: 16px;
+  font-size: clamp(13.5px, 4vw, 16px);
   font-weight: 700;
   line-height: 1.5;
-  letter-spacing: .01em;
+  letter-spacing: 0;
   text-shadow: 0 2px 8px rgba(0,0,0,.55);
 }
 .feature-title .hl {
   background: linear-gradient(transparent 70%, rgba(201,162,75,.5) 70%);
   padding: 0 2px;
+  white-space: nowrap;
 }
 .feature-sub {
-  font-size: 11.5px;
-  line-height: 1.7;
+  font-size: clamp(10px, 2.9vw, 11.5px);
+  line-height: 1.6;
   color: #d5d0c4;
-  margin-top: 8px;
+  margin-top: 6px;
   text-shadow: 0 1px 4px rgba(0,0,0,.6);
+  word-break: auto-phrase;
 }
 
 .empathy-card {
@@ -271,13 +428,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .empathy-hero {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 2 / 1;
   overflow: hidden;
   background: #000;
 }
 .empathy-hero img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center;
-  filter: grayscale(0.35) brightness(0.45) contrast(1.05);
+  width: 100%; height: 100%; object-fit: cover; object-position: center 45%;
+  filter: grayscale(0.35) brightness(0.4) contrast(1.05);
   transform: scale(1.02);
 }
 .empathy-hero::before {
@@ -290,10 +447,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .empathy-hero-inner {
   position: absolute; inset: 0;
-  display: flex; flex-direction: column; justify-content: space-between;
-  padding: 26px 22px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 12px 18px 14px;
   z-index: 2;
   color: #fff;
+  gap: 6px;
 }
 .empathy-eyebrow {
   font-size: 11px;
@@ -307,14 +465,14 @@ img { max-width: 100%; height: auto; display: block; }
 .empathy-headline {
   font-family: 'Noto Serif JP', serif;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 19px;
   line-height: 1.35;
   letter-spacing: .02em;
   text-shadow: 0 2px 12px rgba(0,0,0,.6);
 }
 .empathy-headline .mark {
   color: var(--accent-light);
-  font-size: 44px;
+  font-size: 30px;
   font-family: 'Noto Serif JP', serif;
   display: inline-block;
   line-height: 1;
@@ -327,12 +485,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .empathy-headline small {
   display: block;
-  font-size: 13px;
+  font-size: 11px;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 400;
   letter-spacing: .15em;
   color: #ddd;
-  margin-top: 14px;
+  margin-top: 6px;
 }
 .empathy-list { list-style: none; padding: 22px 20px; }
 .empathy-list li {
@@ -348,11 +506,11 @@ img { max-width: 100%; height: auto; display: block; }
 
 .section-title {
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 28px;
+  font-size: clamp(17px, 4.8vw, 24px);
+  margin-bottom: 26px;
   position: relative;
   padding-bottom: 12px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 .section-title::after {
   content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
@@ -421,13 +579,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .solution-hero h2 {
   font-family: 'Noto Serif JP', serif;
-  font-size: 30px; line-height: 1.4; font-weight: 700;
+  font-size: clamp(22px, 6.4vw, 30px); line-height: 1.4; font-weight: 700;
   text-shadow: 0 2px 10px rgba(0,0,0,.55);
   margin-top: 12px;
 }
 .solution-hero h2 em {
   font-style: normal; color: var(--accent-light);
-  font-size: 38px;
+  font-size: clamp(28px, 8vw, 38px);
 }
 .solution-hero-lead {
   font-size: 14px; line-height: 1.85;
@@ -512,7 +670,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .reason-title {
   font-family: 'Noto Serif JP', serif;
-  font-size: 22px;
+  font-size: clamp(18px, 5vw, 22px);
   font-weight: 700;
   line-height: 1.45;
   letter-spacing: .01em;
@@ -552,14 +710,21 @@ img { max-width: 100%; height: auto; display: block; }
 .step-item:last-child .step-arrow { display: none; }
 
 .review-card { background: var(--white); padding: 20px; border-radius: 10px; margin-bottom: 18px; border: 1px solid #ebe6d8; box-shadow: 0 4px 10px rgba(0,0,0,.04);}
-.review-header { display: flex; align-items: center; margin-bottom: 12px; }
+.review-header { display: flex; align-items: center; margin-bottom: 12px; gap: 14px; }
 .review-avatar {
-  width: 56px; height: 56px; border-radius: 50%;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(7,38,63,.18);
+  border: 2px solid var(--accent-light);
   background: linear-gradient(135deg, var(--accent-light), var(--accent));
-  color: #fff; font-weight: bold; font-size: 22px;
-  display: flex; align-items: center; justify-content: center;
-  margin-right: 14px;
-  font-family: 'Noto Serif JP', serif;
+}
+.review-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
 }
 .review-stars { color: var(--accent); font-size: 17px; margin-bottom: 3px;}
 .review-meta { font-size: 12px; color: #888; }
@@ -588,6 +753,62 @@ img { max-width: 100%; height: auto; display: block; }
 .price-note { font-size: 13px; margin-top: 10px; color: #555; }
 .price-includes { text-align: left; background: #f9f5e8; padding: 12px 14px; border-radius: 6px; margin-top: 14px; font-size: 13px; line-height: 1.7; }
 .price-includes strong { color: var(--main); }
+
+/* 回数券のお知らせ */
+.ticket-note {
+  position: relative;
+  background: linear-gradient(135deg, #fff8e1 0%, #fff 70%);
+  border: 1.5px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 16px 16px 20px;
+  margin-top: 4px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  box-shadow: 0 8px 22px rgba(201,162,75,.18);
+  overflow: hidden;
+}
+.ticket-note::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent-light), var(--accent));
+}
+.ticket-ribbon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #b8902f);
+  color: #fff;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .03em;
+  box-shadow: 0 4px 10px rgba(201,162,75,.45);
+}
+.ticket-body { flex-grow: 1; min-width: 0; }
+.ticket-body h4 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(13.5px, 4vw, 15.5px);
+  color: var(--main-dark);
+  margin-bottom: 6px;
+  line-height: 1.5;
+  word-break: normal;
+}
+.ticket-body h4 .hl {
+  background: linear-gradient(transparent 65%, rgba(201,162,75,.45) 65%);
+  padding: 0 3px;
+  color: var(--main);
+}
+.ticket-body p {
+  font-size: clamp(11.5px, 3.3vw, 12.5px);
+  line-height: 1.75;
+  color: #555;
+  word-break: normal;
+}
 
 /* QuickRiha 名前の補足 */
 .name-note {
@@ -709,13 +930,24 @@ img { max-width: 100%; height: auto; display: block; }
   width: 100%; max-width: 500px;
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(6px);
-  padding: 10px;
-  display: flex; gap: 8px;
+  padding: 8px;
+  display: flex; gap: 6px;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
   z-index: 1000;
+  box-sizing: border-box;
 }
-.sticky-cta a { flex: 1; text-align: center; padding: 13px 5px; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 14px; line-height: 1.2;}
-.sticky-cta a small { display: block; font-size: 10px; font-weight: normal; margin-top: 2px; }
+.sticky-cta a {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  padding: 11px 4px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: clamp(12px, 3.6vw, 14px);
+  line-height: 1.2;
+}
+.sticky-cta a small { display: block; font-size: clamp(9px, 2.6vw, 10px); font-weight: normal; margin-top: 2px; }
 .sticky-main { background: linear-gradient(180deg, var(--accent-light), var(--accent)); color: #1a1200; }
 .sticky-line { background: #00B900; color: #fff; }
 
@@ -727,12 +959,14 @@ body { padding-bottom: 90px; }
 .trust-bar {
   background: var(--main-dark);
   color: #fff;
-  padding: 14px 16px;
+  padding: 12px 14px;
   text-align: center;
-  font-size: 13px;
-  letter-spacing: .05em;
+  font-size: clamp(11.5px, 3.3vw, 13px);
+  letter-spacing: .03em;
+  line-height: 1.6;
 }
-.trust-bar .divider { color: var(--accent); margin: 0 10px; }
+.trust-bar .nowrap { display: inline-block; white-space: nowrap; }
+.trust-bar .divider { color: var(--accent); margin: 0 8px; }
 .trust-bar strong { color: var(--accent-light); }
 
 .symptom-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; justify-content: center; }
@@ -745,13 +979,23 @@ body { padding-bottom: 90px; }
   font-size: 12.5px;
   font-weight: bold;
 }
+
+/* オーバーフロー防止のみ。PCもスマホも同じ「500px幅カード」デザインを維持 */
+*, *::before, *::after { box-sizing: border-box; min-width: 0; }
+body { width: 100%; overflow-x: hidden; }
+img, iframe, video { max-width: 100%; }
 </style>
 </head>
 <body>
 
 <!-- 1. 告知バー -->
 <div class="top-bar">
-  【四十肩・五十肩 専門 / 期間限定】通常10,000円 → 体験 3,300円（50分）
+  <div class="top-bar-store">
+    <span class="nowrap">店舗名: <strong>BodyNate（Quickリハ）</strong></span><span class="sep">/</span><span class="nowrap">神戸三宮・元町駅 徒歩5分</span>
+  </div>
+  <div class="top-bar-campaign">
+    <span class="nowrap">【四十肩・五十肩 専門／期間限定】</span> <span class="nowrap">通常10,000円 → <strong>体験3,300円（50分）</strong></span>
+  </div>
 </div>
 
 <!-- 2. ヒーロー -->
@@ -765,18 +1009,32 @@ body { padding-bottom: 90px; }
       その<span class="accent-line">四十肩・五十肩</span>、<br>諦めないでください。
     </h1>
     <p class="hero-sub">四十肩・五十肩 専門の<br>理学療法士による整体院</p>
-    <div class="cta-container" style="width: 100%; padding: 0 10px;">
-      <a href="#reserve" class="btn-main">
+    <div class="cta-container" style="width: 100%; padding: 12px 10px 0;">
+      <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-main">
         体験 3,300円（50分）で予約する
         <small>▶ 通常 10,000円 → 期間限定価格</small>
       </a>
+    </div>
+    <div class="hero-points">
+      <div class="hero-point">
+        <strong>国家資格</strong>理学療法士
+        <span class="pt-en">LICENSED</span>
+      </div>
+      <div class="hero-point">
+        <strong>四十肩<br>五十肩</strong>専門
+        <span class="pt-en">SPECIALIST</span>
+      </div>
+      <div class="hero-point">
+        <strong>整形外科</strong>出身
+        <span class="pt-en">MEDICAL</span>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- 信頼バー -->
 <div class="trust-bar">
-  国家資格 <strong>理学療法士</strong><span class="divider">|</span>四十肩・五十肩 <strong>専門</strong><span class="divider">|</span>整形外科 <strong>出身</strong>
+  <span class="nowrap">国家資格 <strong>理学療法士</strong></span><span class="divider">|</span><span class="nowrap">四十肩・五十肩 <strong>専門</strong></span><span class="divider">|</span><span class="nowrap">整形外科 <strong>出身</strong></span>
 </div>
 
 <!-- お客様の声 -->
@@ -785,38 +1043,38 @@ body { padding-bottom: 90px; }
 
   <div class="review-card">
     <div class="review-header">
-      <div class="review-avatar">S</div>
+      <div class="review-avatar"><img src="images/reviews/review2.jpg" alt="お客様の声 1" loading="lazy"></div>
       <div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">50代女性 / 五十肩・夜間痛でお悩み</div>
+        <div class="review-meta">五十肩でお悩みの方</div>
       </div>
     </div>
-    <div class="review-headline">夜中の肩の痛みで眠れなかったのが、嘘のように楽に</div>
-    <p>整形外科で注射を打っても改善せず、夜中に痛みで何度も目が覚めていました。こちらで「肩の動きの原因」を初めて説明してもらい、3回目には夜ぐっすり眠れるように。本当に救われました。</p>
+    <div class="review-headline">肩も左右差なく動くようになり、かなり助かりました</div>
+    <p>五十肩で肩が上がらず伺いました。寝返りしても痛くて困っていましたが、今では問題ないです。担当はたまに変わりますが皆さん的確に治療してくださり良かったです。肩も左右差なく動くようになったのでかなり助かりました。また困ったらお願いしようと思います。肩で困ってる人は一度お願いしてもいいかと思います。</p>
   </div>
 
   <div class="review-card">
     <div class="review-header">
-      <div class="review-avatar">M</div>
+      <div class="review-avatar"><img src="images/reviews/review3.jpg" alt="お客様の声 2" loading="lazy"></div>
       <div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">40代女性 / 四十肩・服が着られない</div>
+        <div class="review-meta">肩痛・腕の痺れでお悩みの方</div>
       </div>
     </div>
-    <div class="review-headline">3ヶ月上がらなかった腕が、初回でここまで動くなんて</div>
-    <p>後ろのファスナーが上げられず、ブラジャーも留められない毎日。他の整体は「揉むだけ」でしたが、ここは原因から説明してくれて、初回でその場で腕が上がって涙が出ました。</p>
+    <div class="review-headline">初回でほぼ症状が消え、今はほんとに楽になりました</div>
+    <p>肩の痛みと腕の痺れが取れず困っていたので伺いました。初回でもほぼほぼ症状はなくなりましたが、再発するのが嫌で通わせていただいています。今はほんとに楽になりました。細かくみていただけるので頼りになります。整体探しで迷っている方には一度オススメできるかと思います。</p>
   </div>
 
   <div class="review-card">
     <div class="review-header">
-      <div class="review-avatar">K</div>
+      <div class="review-avatar"><img src="images/reviews/review1.jpg" alt="お客様の声 3" loading="lazy" style="object-position: 82% 22%; transform: scale(1.35);"></div>
       <div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">60代女性 / 五十肩・他院で改善せず</div>
+        <div class="review-meta">五十肩・夜間痛でお悩みの方</div>
       </div>
     </div>
-    <div class="review-headline">いくつ整骨院をまわっても良くならなかった肩が動くように</div>
-    <p>1年以上、複数の整骨院・整体・鍼に通っても変わらず半ば諦めていました。理学療法士さんが肩の仕組みから説明してくださり、原因が明確に。今は趣味のテニスにも復帰できました。</p>
+    <div class="review-headline">15度しか上がらなかった腕が、1回の施術でかなり挙げられるように</div>
+    <p>五十肩でこの度お世話になりました。左肩が動かしにくいなから始まり、気がつけば夜間痛で眠れなくなっていました。整形外科では「完治まで2年」、他院でも同様でしたが、こちらは1年ぐらいで治りますとのことでお願いすることに。左腕が15度くらいしか真横に挙げられない状況だったのですが、1回の施術でかなり挙げられるようになりました。夜間痛も数回の施術でなくなり有難かったです。理学療法士の先生で知識も豊富、安心してお任せできました。四十肩・五十肩の方に特におすすめです。</p>
   </div>
 
   <p class="text-center" style="font-size:12px; color:#888;">※個人の感想であり、効果には個人差があります</p>
@@ -841,7 +1099,7 @@ body { padding-bottom: 90px; }
       </div>
     </div>
     <div class="feature-badge">
-      <img src="images/shoulder/IMG_6922.jpg" alt="四十肩・五十肩だけを診てきた院長">
+      <img src="images/shoulder/IMG_6949.jpg" alt="四十肩・五十肩だけを診てきた院長" style="object-position: center 25%;">
       <div class="feature-inner">
         <div>
           <span class="feature-num-label">STRENGTH</span>
@@ -849,7 +1107,7 @@ body { padding-bottom: 90px; }
         </div>
         <div>
           <span class="feature-title-en">SHOULDER SPECIALIST</span>
-          <h4 class="feature-title"><span class="hl">四十肩・五十肩</span>特化の<br>専門院</h4>
+          <h4 class="feature-title"><span class="hl">四十肩・五十肩</span><br>特化の専門院</h4>
           <p class="feature-sub">肩関節の専門知識で根本にアプローチ。</p>
         </div>
       </div>
@@ -869,7 +1127,7 @@ body { padding-bottom: 90px; }
       </div>
     </div>
     <div class="feature-badge">
-      <img src="images/shoulder/IMG_6948.jpg" alt="原因を特定する医学的評価" style="object-position: center 30%;">
+      <img src="images/shoulder/IMG_7165.jpg" alt="原因を特定する医学的評価" style="object-position: center 35%;">
       <div class="feature-inner">
         <div>
           <span class="feature-num-label">STRENGTH</span>
@@ -889,7 +1147,7 @@ body { padding-bottom: 90px; }
 <div class="p-4 reveal">
   <div class="empathy-card">
     <div class="empathy-hero">
-      <img src="images/shoulder/IMG_6936.jpg" alt="肩の悩みを抱える患者さま">
+      <img src="images/shoulder/IMG_7523.jpg" alt="肩の悩みを抱える患者さま">
       <div class="empathy-hero-inner">
         <span class="empathy-eyebrow">YOUR PAIN</span>
         <h3 class="empathy-headline">
@@ -910,7 +1168,7 @@ body { padding-bottom: 90px; }
     </ul>
     <div class="text-center p-4 bg-light">
       <h3 class="main-text" style="font-size:19px; margin-bottom: 4px;">そのお悩み、</h3>
-      <h3 class="gold-text" style="font-size: 22px;">四十肩・五十肩 専門の<br>理学療法士にお任せください。</h3>
+      <h3 class="gold-text" style="font-size: clamp(18px, 5vw, 22px);">四十肩・五十肩 専門の<br>理学療法士にお任せください。</h3>
     </div>
   </div>
 </div>
@@ -918,8 +1176,8 @@ body { padding-bottom: 90px; }
 <!-- 5. CTA 1 -->
 <div class="cta-container reveal">
   <h3 class="mb-2" style="font-size:17px;">まずは <span class="gold-text" style="font-size:22px;">3,300円</span> で体験。</h3>
-  <a href="#reserve" class="btn-main">体験 3,300円（50分）で予約<small>▶ 通常 10,000円 → 期間限定価格</small></a>
-  <a href="#line" class="btn-sub">LINEで肩の状態を相談する</a>
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）で予約<small>▶ 通常 10,000円 → 期間限定価格</small></a>
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-sub">LINEで肩の状態を相談する</a>
 </div>
 
 <!-- どんな方におすすめ -->
@@ -1033,7 +1291,7 @@ body { padding-bottom: 90px; }
 
 <!-- 8. CTA 2 -->
 <div class="cta-container reveal">
-  <a href="#reserve" class="btn-main">体験 3,300円（50分）で予約<small>▶ 評価＋施術＋セルフケア込み</small></a>
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）で予約<small>▶ 評価＋施術＋セルフケア込み</small></a>
 </div>
 
 <!-- 9. 選ばれる理由 -->
@@ -1128,7 +1386,7 @@ body { padding-bottom: 90px; }
 
 <!-- 10. CTA 3 -->
 <div class="cta-container reveal">
-  <a href="#reserve" class="btn-outline">空き状況を確認する</a>
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-outline">空き状況を確認する</a>
 </div>
 
 <!-- 11. 施術の流れ -->
@@ -1173,18 +1431,12 @@ body { padding-bottom: 90px; }
 
 <!-- 13. CTA 4 -->
 <div class="cta-container reveal">
-  <a href="#reserve" class="btn-main">体験 3,300円（50分）を予約する<small>▶ 完全予約制</small></a>
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）を予約する<small>▶ 完全予約制</small></a>
 </div>
 
 <!-- 18. 料金プラン -->
 <div class="p-4 bg-light reveal" id="reserve">
   <h2 class="section-title"><small>PRICE</small>料金プラン</h2>
-
-  <div class="name-note">
-    <strong>「Quickリハ」という名前について</strong>
-    "Quick" は <strong style="color:var(--main);">「早く治る」</strong> という意味で名付けています。<br>
-    施術時間が短いわけではありません。<strong>1回50分</strong>の中で、評価から施術・セルフケアまで丁寧に行います。
-  </div>
 
   <div class="limited-banner">
     🎁 期間限定キャンペーン
@@ -1210,6 +1462,14 @@ body { padding-bottom: 90px; }
     <h3>通常 肩特化施術コース（50分）</h3>
     <p class="price-new" style="color: var(--main);">10,000<span class="yen">円（税込）</span></p>
     <p class="price-note">2回目以降はこちらが基本料金となります</p>
+  </div>
+
+  <div class="ticket-note">
+    <span class="ticket-ribbon">お得</span>
+    <div class="ticket-body">
+      <h4>お得な<span class="hl">回数券</span>もございます</h4>
+      <p>継続して通われる方には、複数回分をまとめてご購入いただける回数券（割引価格）もご用意しております。詳しくは初回体験時にご案内いたします。</p>
+    </div>
   </div>
 </div>
 
@@ -1265,7 +1525,7 @@ body { padding-bottom: 90px; }
     <p><strong>営業</strong>10:00〜20:00（完全予約制）</p>
     <p><strong>定休</strong>不定休</p>
     <a class="access-link" href="https://maps.app.goo.gl/HrynV4HU1UxL64Q4A" target="_blank" rel="noopener">▶ Googleマップで開く</a>
-    <p style="font-size:12px; color:#666; margin-top:12px; display:block;">※詳細な住所はご予約確定後にお伝えいたします。</p>
+    <p style="font-size:12px; color:#666; margin-top:12px; display:block;">※住所がわからない場合はご連絡ください。</p>
   </div>
 </div>
 
@@ -1273,17 +1533,17 @@ body { padding-bottom: 90px; }
 <div class="cta-container reveal bg-dark" style="padding: 44px 20px;">
   <h2 class="gold-text mb-4" style="font-size: 24px; line-height:1.5;">その四十肩・五十肩、<br>もう我慢しないでください。</h2>
   <p style="color:#ccc; font-size:14px; margin-bottom: 26px;">肩特化の理学療法士が、あなたの肩と向き合います。</p>
-  <a href="#reserve" class="btn-main" style="font-size: 20px;">
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-main" style="font-size: 20px;">
     体験 3,300円（50分）を予約する
     <small>▶ 通常 10,000円 → 期間限定価格</small>
   </a>
-  <a href="#line" class="btn-sub" style="margin-top:14px;">LINEで相談だけでもOK</a>
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-sub" style="margin-top:14px;">LINEで相談だけでもOK</a>
 </div>
 
 <!-- 23. スティッキーCTA -->
 <div class="sticky-cta">
-  <a href="#line" class="sticky-line">LINE予約<small>気軽に相談</small></a>
-  <a href="#reserve" class="sticky-main">WEB予約<small>体験 3,300円</small></a>
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="sticky-line">LINE予約<small>気軽に相談</small></a>
+  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="sticky-main">WEB予約<small>体験 3,300円</small></a>
 </div>
 
 <script>
