@@ -47,63 +47,9 @@ src="https://www.facebook.com/tr?id=1483058883852619&ev=PageView&noscript=1"/></
   if (window.__quickRihaLpTrackingReady) return;
   window.__quickRihaLpTrackingReady = true;
 
-  var CTA_ROUTE = 'https://quickriha-booking.pages.dev/auth/line';
-  var ATTRIBUTION_KEY = 'quickriha_lp_attribution_v1';
-  var VISITOR_KEY = 'quickriha_lp_visitor_id_v1';
-  var ATTRIBUTION_FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'twclid', 'ttclid'];
-  var UUID_V4 = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-
-  function readSession(key){
-    try { return window.sessionStorage.getItem(key); } catch(err) { return null; }
-  }
-  function writeSession(key, value){
-    try { window.sessionStorage.setItem(key, value); } catch(err) {}
-  }
-  function uuid(){
-    var c = window.crypto;
-    if (c && typeof c.randomUUID === 'function') return c.randomUUID();
-    var bytes = new Uint8Array(16);
-    if (c && typeof c.getRandomValues === 'function') c.getRandomValues(bytes);
-    else for (var i = 0; i < bytes.length; i++) bytes[i] = Math.floor(Math.random() * 256);
-    bytes[6] = (bytes[6] & 15) | 64;
-    bytes[8] = (bytes[8] & 63) | 128;
-    var hex = Array.prototype.map.call(bytes, function(b){ return b.toString(16).padStart(2, '0'); }).join('');
-    return hex.slice(0, 8) + '-' + hex.slice(8, 12) + '-' + hex.slice(12, 16) + '-' + hex.slice(16, 20) + '-' + hex.slice(20);
-  }
-  function attributionValue(key, value){
-    if (typeof value !== 'string') return '';
-    value = value.trim();
-    var limit = key.indexOf('utm_') === 0 ? 256 : 512;
-    if (!value || value.length > limit || /[\u0000-\u001f\u007f]/.test(value)) return '';
-    return value;
-  }
-  function allowedAttribution(values){
-    var result = {};
-    if (!values || typeof values !== 'object' || Array.isArray(values)) return result;
-    ATTRIBUTION_FIELDS.forEach(function(key){
-      var value = attributionValue(key, values[key]);
-      if (value) result[key] = value;
-    });
-    return result;
-  }
-
-  var storedAttribution = {};
-  try { storedAttribution = allowedAttribution(JSON.parse(readSession(ATTRIBUTION_KEY) || '{}')); } catch(err) {}
-  var incomingAttribution = {};
-  var currentParams = new URL(location.href).searchParams;
-  ATTRIBUTION_FIELDS.forEach(function(key){
-    var value = attributionValue(key, currentParams.get(key));
-    if (value) incomingAttribution[key] = value;
-  });
-  // A new attributed arrival replaces the whole campaign, never mixing old ad IDs.
-  // Unattributed navigation retains this session's attribution; no "direct" UTM is invented.
-  var attribution = Object.keys(incomingAttribution).length ? incomingAttribution : storedAttribution;
-  writeSession(ATTRIBUTION_KEY, JSON.stringify(attribution));
-  var visitorId = readSession(VISITOR_KEY);
-  if (!UUID_V4.test(visitorId || '')) {
-    visitorId = uuid();
-    writeSession(VISITOR_KEY, visitorId);
-  }
+  // 予約・相談ボタンは押すとすぐ公式LINEの友だち追加を開く（LINEログインと予約ページを通さない・UME 2026-11-11）
+  var LINE_ID = '@367rqlle';
+  var LINE_ADD = 'https://line.me/R/ti/p/' + LINE_ID + '?oat_content=url';
 
   function ctaDetails(a){
     var data = a.dataset || {};
@@ -111,25 +57,18 @@ src="https://www.facebook.com/tr?id=1483058883852619&ev=PageView&noscript=1"/></
     if (!/^[a-z0-9_]{1,64}$/.test(id || '') || (intent !== 'booking' && intent !== 'consult')) return null;
     return { id: id, intent: intent };
   }
-  function ctaHref(details, clickId){
-    var url = new URL(CTA_ROUTE);
-    url.searchParams.set('ref', 'lp-main');
-    url.searchParams.set('intent', details.intent);
-    url.searchParams.set('cta_id', details.id);
-    url.searchParams.set('page', details.intent === 'booking' ? 'salon-book' : 'chat');
-    if (details.intent === 'booking') url.searchParams.set('calendar', '1');
-    if (UUID_V4.test(visitorId)) url.searchParams.set('visitor_id', visitorId);
-    if (UUID_V4.test(clickId || '')) url.searchParams.set('click_id', clickId);
-    ATTRIBUTION_FIELDS.forEach(function(key){
-      if (attribution[key]) url.searchParams.set(key, attribution[key]);
-    });
-    return url.toString();
-  }
   function prepareLinks(){
     document.querySelectorAll('a[data-cta-id][data-cta-intent]').forEach(function(a){
-      var details = ctaDetails(a);
-      if (details) a.href = ctaHref(details);
+      if (ctaDetails(a)) a.href = LINE_ADD;
     });
+  }
+  // 緑のLP（v2）と同じ開き方。InstagramやFacebookのアプリ内ブラウザでもLINEが開くようにする
+  function openLine(){
+    var web = 'https://line.me/R/ti/p/' + LINE_ID, ua = navigator.userAgent || '';
+    if (/Android/i.test(ua) && /Instagram|FBAN|FBAV|FB_IAB/i.test(ua)) { location.href = web; return; }
+    if (/Android/i.test(ua)) { location.href = 'intent://ti/p/' + LINE_ID + '#Intent;scheme=line;package=jp.naver.line.android;S.browser_fallback_url=' + encodeURIComponent(web) + ';end'; return; }
+    if (/iPhone|iPad|iPod/i.test(ua)) { var t0 = Date.now(); setTimeout(function(){ if (Date.now() - t0 < 2500 && document.visibilityState === 'visible') location.href = web; }, 1500); location.href = 'line://ti/p/' + LINE_ID; return; }
+    window.open(web, '_blank', 'noopener');
   }
   function cleanReferrer(){
     try {
@@ -159,14 +98,12 @@ src="https://www.facebook.com/tr?id=1483058883852619&ev=PageView&noscript=1"/></
     if (!a) return;
     var details = ctaDetails(a);
     if (details) {
-      // Keep native anchor navigation (including target=_blank); recording is done
-      // by the first-party redirect, not a fragile async browser beacon.
-      a.href = ctaHref(details, uuid());
+      e.preventDefault();
       var ctaPayload = analyticsParams();
       ctaPayload.cta_id = details.id;
       ctaPayload.intent = details.intent;
       ctaPayload.lp_variant = 'main';
-      // Never send visitor/click IDs, advertising IDs, query URLs or form data to analytics.
+      ctaPayload.destination = 'line_friend_add';
       try { if (typeof gtag === 'function') gtag('event', 'lp_cta_clicked', ctaPayload); } catch(err) {}
       try {
         if (typeof window.clarity === 'function') {
@@ -175,6 +112,8 @@ src="https://www.facebook.com/tr?id=1483058883852619&ev=PageView&noscript=1"/></
           window.clarity('set', 'last_cta_intent', details.intent);
         }
       } catch(err) {}
+      try { if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'quickriha_lp_main_' + details.id, value: 3300, currency: 'JPY' }); } catch(err) {}
+      openLine();
       return;
     }
     var href = a.href || a.dataset.href || '';
@@ -1174,7 +1113,7 @@ img, iframe, video { max-width: 100%; }
     </h1>
     <p class="hero-sub">四十肩・五十肩をみる<br>理学療法士の整体院</p>
     <div class="cta-container" style="width: 100%; padding: 12px 10px 0;">
-      <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=booking&amp;cta_id=hero_booking&amp;page=salon-book&amp;calendar=1" data-cta-id="hero_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main">
+      <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="hero_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main">
         体験 3,300円（50分）で予約する
         <small>▶ 通常 11,000円 → 期間限定価格</small>
       </a>
@@ -1340,8 +1279,8 @@ img, iframe, video { max-width: 100%; }
 <!-- 5. CTA 1 -->
 <div class="cta-container reveal">
   <h3 class="mb-2" style="font-size:17px;">まずは <span class="gold-text" style="font-size:22px;">3,300円</span> で体験。</h3>
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=booking&amp;cta_id=pain_booking&amp;page=salon-book&amp;calendar=1" data-cta-id="pain_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）で予約<small>▶ 通常 11,000円 → 期間限定価格</small></a>
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=consult&amp;cta_id=pain_consult&amp;page=chat" data-cta-id="pain_consult" data-cta-intent="consult" target="_blank" rel="noopener" class="btn-sub">LINEで肩の状態を相談する</a>
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="pain_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）で予約<small>▶ 通常 11,000円 → 期間限定価格</small></a>
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="pain_consult" data-cta-intent="consult" target="_blank" rel="noopener" class="btn-sub">LINEで肩の状態を相談する</a>
 </div>
 
 <!-- どんな方におすすめ -->
@@ -1455,7 +1394,7 @@ img, iframe, video { max-width: 100%; }
 
 <!-- 8. CTA 2 -->
 <div class="cta-container reveal">
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=booking&amp;cta_id=solution_booking&amp;page=salon-book&amp;calendar=1" data-cta-id="solution_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）で予約<small>▶ 評価＋施術＋セルフケア込み</small></a>
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="solution_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）で予約<small>▶ 評価＋施術＋セルフケア込み</small></a>
 </div>
 
 <!-- 9. 選ばれる理由 -->
@@ -1550,7 +1489,7 @@ img, iframe, video { max-width: 100%; }
 
 <!-- 10. CTA 3 -->
 <div class="cta-container reveal">
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=booking&amp;cta_id=availability_booking&amp;page=salon-book&amp;calendar=1" data-cta-id="availability_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-outline">空き状況を確認する</a>
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="availability_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-outline">LINEで空き状況を確認する</a>
 </div>
 
 <!-- 11. 施術の流れ -->
@@ -1595,7 +1534,7 @@ img, iframe, video { max-width: 100%; }
 
 <!-- 13. CTA 4 -->
 <div class="cta-container reveal">
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=booking&amp;cta_id=flow_booking&amp;page=salon-book&amp;calendar=1" data-cta-id="flow_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）を予約する<small>▶ 完全予約制</small></a>
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="flow_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main">体験 3,300円（50分）を予約する<small>▶ 完全予約制</small></a>
 </div>
 
 <!-- 18. 料金プラン -->
@@ -1697,17 +1636,17 @@ img, iframe, video { max-width: 100%; }
 <div class="cta-container reveal bg-dark" style="padding: 44px 20px;">
   <h2 class="gold-text mb-4" style="font-size: 24px; line-height:1.5;">その四十肩・五十肩、<br>もう我慢しないでください。</h2>
   <p style="color:#ccc; font-size:14px; margin-bottom: 26px;">肩特化の理学療法士が、あなたの肩と向き合います。</p>
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=booking&amp;cta_id=final_booking&amp;page=salon-book&amp;calendar=1" data-cta-id="final_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main" style="font-size: 20px;">
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="final_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="btn-main" style="font-size: 20px;">
     体験 3,300円（50分）を予約する
     <small>▶ 通常 11,000円 → 期間限定価格</small>
   </a>
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=consult&amp;cta_id=final_consult&amp;page=chat" data-cta-id="final_consult" data-cta-intent="consult" target="_blank" rel="noopener" class="btn-sub" style="margin-top:14px;">LINEで相談だけでもOK</a>
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="final_consult" data-cta-intent="consult" target="_blank" rel="noopener" class="btn-sub" style="margin-top:14px;">LINEで相談だけでもOK</a>
 </div>
 
 <!-- 23. スティッキーCTA -->
 <div class="sticky-cta">
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=consult&amp;cta_id=sticky_consult&amp;page=chat" data-cta-id="sticky_consult" data-cta-intent="consult" target="_blank" rel="noopener" class="sticky-line">LINE相談<small>気軽に相談</small></a>
-  <a href="https://quickriha-booking.pages.dev/auth/line?ref=lp-main&amp;intent=booking&amp;cta_id=sticky_booking&amp;page=salon-book&amp;calendar=1" data-cta-id="sticky_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="sticky-main">WEB予約<small>体験 3,300円</small></a>
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="sticky_consult" data-cta-intent="consult" target="_blank" rel="noopener" class="sticky-line">LINE相談<small>気軽に相談</small></a>
+  <a href="https://line.me/R/ti/p/@367rqlle?oat_content=url" data-cta-id="sticky_booking" data-cta-intent="booking" target="_blank" rel="noopener" class="sticky-main">LINEで予約<small>体験 3,300円</small></a>
 </div>
 
 <script>
